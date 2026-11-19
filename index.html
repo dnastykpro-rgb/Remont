@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>РемКомп13 — Ремонт компьютеров в Саранске и Атюрьево</title>
-  <meta name="description" content="Частные мастера по ремонту компьютеров и ноутбуков. Выезд на дом по Саранску (+7 951 053-66-08) и по всему Атюрьево (+7 952 078-54-82)." />
+  <meta name="description" content="Частные мастера по ремонту компьютеров и ноутбуков. Приём на дому в Саранске (+7 951 053-66-08) и выезд по всему Атюрьево (+7 952 078-54-82)." />
   <style>
     :root {
       --bg-body: #f8fafc;
@@ -38,16 +38,8 @@
       --shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text-main);
@@ -57,43 +49,34 @@
       transition: background-color 0.35s ease, color 0.35s ease;
     }
 
-    .container {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+
     @keyframes gradientFlow {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-
     @keyframes floatSlow {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
       50% { transform: translateY(-10px) rotate(0.8deg); }
     }
-
     @keyframes pulseGlow {
       0% { box-shadow: 0 0 0 0 var(--primary-glow); }
       70% { box-shadow: 0 0 0 14px rgba(37, 99, 235, 0); }
       100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
     }
-
     @keyframes modalPop {
       from { opacity: 0; transform: scale(0.92) translateY(20px); }
       to { opacity: 1; transform: scale(1) translateY(0); }
     }
-
     @keyframes slideUpFade {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes marqueeLeft {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
-
     @keyframes toastSlideIn {
       from { opacity: 0; transform: translateX(120%); }
       to { opacity: 1; transform: translateX(0); }
@@ -104,12 +87,7 @@
       transform: translateY(32px);
       transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
     }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
+    .reveal.visible { opacity: 1; transform: translateY(0); }
     header {
       background: var(--bg-header);
       backdrop-filter: blur(12px);
@@ -140,16 +118,10 @@
       gap: 8px;
       transition: transform 0.25s ease;
     }
-
     .logo:hover { transform: scale(1.04); }
     .logo span { color: var(--primary); }
 
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-    }
-
+    .nav-links { display: flex; gap: 20px; list-style: none; }
     .nav-links a {
       text-decoration: none;
       color: var(--text-muted);
@@ -158,7 +130,6 @@
       position: relative;
       transition: color 0.2s;
     }
-
     .nav-links a::after {
       content: "";
       position: absolute;
@@ -169,16 +140,10 @@
       background: var(--primary);
       transition: width 0.3s ease;
     }
-
     .nav-links a:hover { color: var(--primary); }
     .nav-links a:hover::after { width: 100%; }
 
-    .nav-actions {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+    .nav-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 
     .theme-toggle {
       background: var(--bg-alt);
@@ -194,11 +159,8 @@
       justify-content: center;
       transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
     }
+    .theme-toggle:hover { transform: rotate(20deg) scale(1.08); border-color: var(--primary); }
 
-    .theme-toggle:hover {
-      transform: rotate(20deg) scale(1.08);
-      border-color: var(--primary);
-    }
     .btn {
       display: inline-flex;
       align-items: center;
@@ -215,45 +177,18 @@
       cursor: pointer;
       transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     }
-
-    .btn:hover {
-      background: var(--primary-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
-    }
-
+    .btn:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3); }
     .btn:active { transform: scale(0.97); }
     .btn-pulse { animation: pulseGlow 2.2s infinite; }
 
-    .btn-secondary {
-      background: var(--bg-alt);
-      color: var(--text-main);
-      border: 1px solid var(--border);
-    }
+    .btn-secondary { background: var(--bg-alt); color: var(--text-main); border: 1px solid var(--border); }
+    .btn-secondary:hover { background: var(--border); box-shadow: none; }
 
-    .btn-secondary:hover {
-      background: var(--border);
-      box-shadow: none;
-    }
-
-    .btn-master {
-      background: #0f172a;
-      color: #ffffff;
-      border: 1px solid #334155;
-    }
-
+    .btn-master { background: #0f172a; color: #ffffff; border: 1px solid #334155; }
     .btn-master:hover { background: #1e293b; }
 
-    .btn-outline-light {
-      background: rgba(255, 255, 255, 0.08);
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .btn-outline-light:hover {
-      background: rgba(255, 255, 255, 0.16);
-      border-color: #ffffff;
-    }
+    .btn-outline-light { background: rgba(255, 255, 255, 0.08); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.3); }
+    .btn-outline-light:hover { background: rgba(255, 255, 255, 0.16); border-color: #ffffff; }
 
     .hero {
       background: linear-gradient(-45deg, #0f172a, #1e3a8a, #0f172a, #172554);
@@ -264,14 +199,7 @@
       position: relative;
       overflow: hidden;
     }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 36px;
-      align-items: center;
-    }
-
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; align-items: center; }
     .badge {
       display: inline-block;
       background: rgba(59, 130, 246, 0.25);
@@ -284,35 +212,11 @@
       margin-bottom: 16px;
       animation: slideUpFade 0.6s ease both;
     }
+    .hero h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 16px; animation: slideUpFade 0.8s ease both; }
+    .hero p { color: #cbd5e1; font-size: 1.05rem; margin-bottom: 26px; animation: slideUpFade 1s ease both; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; animation: slideUpFade 1.15s ease both; }
 
-    .hero h1 {
-      font-size: 2.5rem;
-      line-height: 1.2;
-      margin-bottom: 16px;
-      animation: slideUpFade 0.8s ease both;
-    }
-
-    .hero p {
-      color: #cbd5e1;
-      font-size: 1.05rem;
-      margin-bottom: 26px;
-      animation: slideUpFade 1s ease both;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      animation: slideUpFade 1.15s ease both;
-    }
-
-    .masters-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      animation: slideUpFade 1s ease both;
-    }
-
+    .masters-cards { display: flex; flex-direction: column; gap: 16px; animation: slideUpFade 1s ease both; }
     .master-pill {
       background: rgba(255, 255, 255, 0.07);
       border: 1px solid rgba(255, 255, 255, 0.16);
@@ -321,25 +225,9 @@
       padding: 20px 22px;
       transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
     }
-
-    .master-pill:hover {
-      transform: translateX(8px);
-      background: rgba(255, 255, 255, 0.12);
-      border-color: #60a5fa;
-    }
-
-    .master-pill strong {
-      display: block;
-      font-size: 1.12rem;
-      color: #ffffff;
-      margin-bottom: 4px;
-    }
-
-    .master-pill p {
-      font-size: 0.92rem;
-      color: #cbd5e1;
-      margin-bottom: 10px;
-    }
+    .master-pill:hover { transform: translateX(8px); background: rgba(255, 255, 255, 0.12); border-color: #60a5fa; }
+    .master-pill strong { display: block; font-size: 1.12rem; color: #ffffff; margin-bottom: 4px; }
+    .master-pill p { font-size: 0.92rem; color: #cbd5e1; margin-bottom: 10px; }
 
     .phone-link {
       display: inline-flex;
@@ -351,32 +239,12 @@
       font-size: 1.02rem;
       transition: color 0.2s;
     }
-
     .phone-link:hover { color: #ffffff; }
-    section {
-      padding: 72px 0;
-      transition: background-color 0.35s ease;
-    }
-
-    .section-alt {
-      background-color: var(--bg-alt);
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 44px;
-    }
-
-    .section-title h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      color: var(--text-muted);
-      max-width: 640px;
-      margin: 0 auto;
-    }
+    section { padding: 72px 0; transition: background-color 0.35s ease; }
+    .section-alt { background-color: var(--bg-alt); }
+    .section-title { text-align: center; margin-bottom: 44px; }
+    .section-title h2 { font-size: 2rem; margin-bottom: 10px; }
+    .section-title p { color: var(--text-muted); max-width: 640px; margin: 0 auto; }
 
     .price-hint-banner {
       display: inline-flex;
@@ -392,12 +260,7 @@
       margin-top: 14px;
     }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
-    }
-
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
     .card {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -405,48 +268,14 @@
       padding: 26px;
       transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease, background-color 0.35s ease;
     }
+    .card:hover { transform: translateY(-7px); box-shadow: var(--shadow); border-color: var(--primary); }
+    .card-icon { font-size: 2rem; margin-bottom: 12px; display: inline-block; transition: transform 0.3s ease; }
+    .card:hover .card-icon { transform: scale(1.2) rotate(-5deg); }
+    .card h3 { margin-bottom: 8px; font-size: 1.14rem; }
+    .card p { color: var(--text-muted); font-size: 0.94rem; margin-bottom: 14px; }
+    .price-tag { font-weight: 700; color: var(--primary); font-size: 0.92rem; }
 
-    .card:hover {
-      transform: translateY(-7px);
-      box-shadow: var(--shadow);
-      border-color: var(--primary);
-    }
-
-    .card-icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
-      display: inline-block;
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover .card-icon {
-      transform: scale(1.2) rotate(-5deg);
-    }
-
-    .card h3 {
-      margin-bottom: 8px;
-      font-size: 1.14rem;
-    }
-
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.94rem;
-      margin-bottom: 14px;
-    }
-
-    .price-tag {
-      font-weight: 700;
-      color: var(--primary);
-      font-size: 0.92rem;
-    }
-
-    .advantages-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
+    .advantages-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
     .adv-image-box {
       position: relative;
       border-radius: 20px;
@@ -455,18 +284,8 @@
       animation: floatSlow 5s ease-in-out infinite;
       border: 4px solid var(--bg-card);
     }
-
-    .adv-image-box img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.6s ease;
-    }
-
-    .adv-image-box:hover img {
-      transform: scale(1.06);
-    }
-
+    .adv-image-box img { width: 100%; height: auto; display: block; transition: transform 0.6s ease; }
+    .adv-image-box:hover img { transform: scale(1.06); }
     .adv-image-caption {
       position: absolute;
       bottom: 14px;
@@ -481,12 +300,7 @@
       font-weight: 500;
     }
 
-    .adv-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
+    .adv-list { display: flex; flex-direction: column; gap: 16px; }
     .adv-item {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -497,12 +311,7 @@
       align-items: flex-start;
       transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.35s ease;
     }
-
-    .adv-item:hover {
-      transform: translateX(6px);
-      border-color: var(--primary);
-    }
-
+    .adv-item:hover { transform: translateX(6px); border-color: var(--primary); }
     .adv-num {
       background: rgba(37, 99, 235, 0.12);
       color: var(--primary);
@@ -514,16 +323,9 @@
       align-items: center;
       justify-content: center;
     }
+    .adv-item h4 { margin-bottom: 4px; font-size: 1.04rem; }
+    .adv-item p { color: var(--text-muted); font-size: 0.92rem; }
 
-    .adv-item h4 {
-      margin-bottom: 4px;
-      font-size: 1.04rem;
-    }
-
-    .adv-item p {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-    }
     .marquee-wrapper {
       overflow: hidden;
       width: 100%;
@@ -532,17 +334,8 @@
       mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
       -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
     }
-
-    .marquee-track {
-      display: flex;
-      gap: 20px;
-      width: max-content;
-      animation: marqueeLeft 34s linear infinite;
-    }
-
-    .marquee-wrapper:hover .marquee-track {
-      animation-play-state: paused;
-    }
+    .marquee-track { display: flex; gap: 20px; width: max-content; animation: marqueeLeft 34s linear infinite; }
+    .marquee-wrapper:hover .marquee-track { animation-play-state: paused; }
 
     .review-card {
       width: 330px;
@@ -554,24 +347,9 @@
       box-shadow: var(--shadow);
       transition: border-color 0.3s ease, transform 0.3s ease;
     }
-
-    .review-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-4px);
-    }
-
-    .review-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-
-    .review-author {
-      font-weight: 700;
-      font-size: 1rem;
-    }
-
+    .review-card:hover { border-color: var(--primary); transform: translateY(-4px); }
+    .review-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .review-author { font-weight: 700; font-size: 1rem; }
     .review-city {
       font-size: 0.78rem;
       background: rgba(37, 99, 235, 0.12);
@@ -580,20 +358,8 @@
       border-radius: 999px;
       font-weight: 700;
     }
-
-    .review-stars {
-      color: #f59e0b;
-      font-size: 0.95rem;
-      margin-bottom: 8px;
-      letter-spacing: 2px;
-    }
-
-    .review-text {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      line-height: 1.5;
-    }
-
+    .review-stars { color: #f59e0b; font-size: 0.95rem; margin-bottom: 8px; letter-spacing: 2px; }
+    .review-text { color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; }
     .review-master-reply {
       margin-top: 10px;
       padding: 8px 12px;
@@ -603,13 +369,7 @@
       font-size: 0.84rem;
       color: var(--text-main);
     }
-
-    .geo-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 26px;
-    }
-
+    .geo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
     .geo-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -617,41 +377,13 @@
       padding: 30px;
       transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.35s ease;
     }
-
-    .geo-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow);
-    }
-
-    .geo-card h3 {
-      color: var(--primary);
-      margin-bottom: 10px;
-      font-size: 1.28rem;
-    }
-
-    .geo-card p {
-      color: var(--text-muted);
-      margin-bottom: 14px;
-    }
-
-    .geo-phone {
-      display: block;
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: var(--text-main);
-      text-decoration: none;
-      margin-bottom: 16px;
-    }
-
+    .geo-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .geo-card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.28rem; }
+    .geo-card p { color: var(--text-muted); margin-bottom: 14px; }
+    .geo-phone { display: block; font-size: 1.15rem; font-weight: 800; color: var(--text-main); text-decoration: none; margin-bottom: 16px; }
     .geo-phone:hover { color: var(--primary); }
 
-    footer {
-      background: #0f172a;
-      color: #94a3b8;
-      padding: 44px 0 32px;
-      font-size: 0.92rem;
-    }
-
+    footer { background: #0f172a; color: #94a3b8; padding: 44px 0 32px; font-size: 0.92rem; }
     .footer-top {
       display: flex;
       justify-content: space-between;
@@ -661,24 +393,10 @@
       padding-bottom: 24px;
       border-bottom: 1px solid #1e293b;
     }
-
-    .footer-phones a {
-      color: #e2e8f0;
-      text-decoration: none;
-      font-weight: 600;
-      margin-right: 16px;
-    }
-
+    .footer-phones a { color: #e2e8f0; text-decoration: none; font-weight: 600; margin-right: 16px; }
     .footer-phones a:hover { color: #60a5fa; }
 
-    .agreement-box {
-      margin-top: 24px;
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
+    .agreement-box { margin-top: 24px; background: #1e293b; border: 1px solid #334155; border-radius: 12px; overflow: hidden; }
     .agreement-summary {
       padding: 14px 20px;
       cursor: pointer;
@@ -689,18 +407,10 @@
       align-items: center;
       user-select: none;
     }
-
     .agreement-summary:hover { background: #273549; }
-
-    .agreement-content {
-      padding: 14px 20px 18px;
-      color: #cbd5e1;
-      font-size: 0.85rem;
-      line-height: 1.65;
-      border-top: 1px solid #334155;
-    }
-
+    .agreement-content { padding: 14px 20px 18px; color: #cbd5e1; font-size: 0.85rem; line-height: 1.65; border-top: 1px solid #334155; }
     .agreement-content p { margin-bottom: 8px; }
+
     .modal-overlay {
       display: none;
       position: fixed;
@@ -712,7 +422,6 @@
       justify-content: center;
       padding: 16px;
     }
-
     .modal-overlay.active { display: flex; }
 
     .modal-box {
@@ -729,7 +438,6 @@
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
       animation: modalPop 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
-
     .modal-box.wide { max-width: 760px; }
 
     .modal-close {
@@ -746,21 +454,9 @@
       color: var(--text-muted);
       transition: transform 0.2s, background 0.2s;
     }
+    .modal-close:hover { transform: rotate(90deg); color: var(--text-main); }
 
-    .modal-close:hover {
-      transform: rotate(90deg);
-      color: var(--text-main);
-    }
-
-    .tabs {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 20px;
-      background: var(--bg-alt);
-      padding: 5px;
-      border-radius: 12px;
-    }
-
+    .tabs { display: flex; gap: 8px; margin-bottom: 20px; background: var(--bg-alt); padding: 5px; border-radius: 12px; }
     .tab-btn {
       flex: 1;
       padding: 10px;
@@ -772,25 +468,11 @@
       color: var(--text-muted);
       transition: all 0.2s;
     }
-
-    .tab-btn.active {
-      background: var(--bg-card);
-      color: var(--primary);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
+    .tab-btn.active { background: var(--bg-card); color: var(--primary); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
 
     .form-group { margin-bottom: 14px; }
-
-    .form-group label {
-      display: block;
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 5px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
+    .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 5px; }
+    .form-group input, .form-group select, .form-group textarea {
       width: 100%;
       padding: 11px 14px;
       border: 1px solid var(--border);
@@ -801,10 +483,7 @@
       font-family: inherit;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
       outline: none;
       border-color: var(--primary);
       box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
@@ -824,14 +503,7 @@
       gap: 8px;
     }
 
-    .status-card {
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
-      margin-top: 14px;
-    }
-
+    .status-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-top: 14px; }
     .master-reply-box {
       background: rgba(16, 185, 129, 0.12);
       border: 1px solid rgba(16, 185, 129, 0.4);
@@ -842,43 +514,14 @@
       font-weight: 600;
     }
 
-    .order-item {
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px;
-      margin-bottom: 16px;
-      background: var(--bg-alt);
-    }
-
-    .order-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .city-tag {
-      background: rgba(37, 99, 235, 0.15);
-      color: var(--primary);
-      padding: 3px 10px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 700;
-    }
-
+    .order-item { border: 1px solid var(--border); border-radius: 14px; padding: 18px; margin-bottom: 16px; background: var(--bg-alt); }
+    .order-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
+    .city-tag { background: rgba(37, 99, 235, 0.15); color: var(--primary); padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; }
     .type-tag-complaint { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
     .type-tag-question { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
     .type-tag-review { background: rgba(16, 185, 129, 0.15); color: #10b981; }
 
-    .reply-controls {
-      display: flex;
-      gap: 8px;
-      margin-top: 12px;
-      flex-wrap: wrap;
-    }
-
+    .reply-controls { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
     .reply-controls input {
       flex: 1;
       min-width: 200px;
@@ -889,17 +532,7 @@
       border-radius: 8px;
     }
 
-    .toast-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 2000;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      max-width: 350px;
-    }
-
+    .toast-container { position: fixed; bottom: 20px; right: 20px; z-index: 2000; display: flex; flex-direction: column; gap: 10px; max-width: 350px; }
     .toast-banner {
       background: #0f172a;
       color: #ffffff;
@@ -910,7 +543,6 @@
       cursor: pointer;
       animation: toastSlideIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
-
     .toast-banner strong { display: block; font-size: 0.95rem; margin-bottom: 3px; color: #93c5fd; }
     .toast-banner span { font-size: 0.85rem; color: #e2e8f0; }
 
@@ -946,7 +578,7 @@
       <div>
         <div class="badge">Прямые мастера • Саранск и Атюрьево</div>
         <h1>Ремонт компьютеров и ноутбуков в Мордовии</h1>
-        <p>Без диспетчеров и наценок: один специалист выезжает на дом по всему Саранску, второй работает по всему Атюрьево и району. Оставьте заявку на сайте — мастер оценит поломку и напишет точную цену в ответ.</p>
+        <p>Без диспетчеров и наценок: в Саранске мастер принимает технику на дому, а в Атюрьево специалист выезжает по всему району. Оставьте заявку на сайте — мастер оценит поломку и напишет точную цену в ответ.</p>
         <div class="hero-actions">
           <button class="btn btn-pulse" onclick="openClientModal('new')">📝 Подать заявку на ремонт</button>
           <button class="btn btn-outline-light" onclick="openClientModal('check')">🔍 Проверить ответ мастера</button>
@@ -955,13 +587,13 @@
 
       <div class="masters-cards">
         <div class="master-pill">
-          <strong>🏙️ Мастер в Саранске (выезд на дом)</strong>
-          <p>Оперативный выезд во все районы Саранска в день обращения.</p>
+          <strong>🏠 Мастер в Саранске (работа на дому)</strong>
+          <p>Приём и ремонт компьютеров и ноутбуков на дому в Саранске (без выезда к клиенту).</p>
           <a href="tel:+79510536608" class="phone-link">📞 +7 951 053-66-08</a>
         </div>
         <div class="master-pill">
-          <strong>🏡 Мастер в Атюрьево (по всему району)</strong>
-          <p>Выезд по всему селу Атюрьево и близлежащим населенным пунктам.</p>
+          <strong>🏡 Мастер в Атюрьево (выезд по району)</strong>
+          <p>Выезд на адрес по всему селу Атюрьево и близлежащим населенным пунктам.</p>
           <a href="tel:+79520785482" class="phone-link">📞 +7 952 078-54-82</a>
         </div>
       </div>
@@ -1015,21 +647,85 @@
       </div>
     </div>
   </section>
+  <section id="advantages" class="section-alt">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>Наши преимущества</h2>
+        <p>Аккуратный подход к каждой детали и прямая связь с мастером вашего района</p>
+      </div>
+
+      <div class="advantages-layout">
+        <div class="adv-image-box reveal">
+          <img src="advantages.jpeg" alt="Профессиональный ремонт компьютеров и материнских плат" onerror="this.onerror=null; this.src='advantages.jpg';" />
+          <div class="adv-image-caption">🔧 Точная диагностика и бережная работа с компонентами ПК</div>
+        </div>
+
+        <div class="adv-list">
+          <div class="adv-item reveal">
+            <div class="adv-num">01</div>
+            <div>
+              <h4>Прямой диалог с мастером</h4>
+              <p>Заявку получает лично специалист из Саранска или Атюрьево и отвечает вам напрямую в окошке заявки.</p>
+            </div>
+          </div>
+          <div class="adv-item reveal">
+            <div class="adv-num">02</div>
+            <div>
+              <h4>Прозрачная стоимость заранее</h4>
+              <p>Цена будет указана в ответе на заявку — вы заранее понимаете бюджет ремонта до передачи техники.</p>
+            </div>
+          </div>
+          <div class="adv-item reveal">
+            <div class="adv-num">03</div>
+            <div>
+              <h4>Удобный формат в двух локациях</h4>
+              <p>В Саранске ремонт выполняется на дому у мастера со всем оборудованием, в Атюрьево — с выездом по району.</p>
+            </div>
+          </div>
+          <div class="adv-item reveal">
+            <div class="adv-num">04</div>
+            <div>
+              <h4>Сохранность ваших файлов</h4>
+              <p>Бережно относимся к личным фотографиям, документам и рабочим проектам на вашем компьютере.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>Отзывы клиентов</h2>
+        <p>Реальные впечатления жителей Саранска и Атюрьево (наведите курсор, чтобы остановить ленту)</p>
+      </div>
+    </div>
+
+    <div class="marquee-wrapper reveal">
+      <div class="marquee-track" id="reviewsMarqueeTrack"></div>
+    </div>
+
+    <div class="container" style="text-align: center; margin-top: 12px;">
+      <button class="btn btn-secondary" onclick="openFeedbackModal('new', 'Отзыв')">✍️ Оставить свой отзыв, вопрос или жалобу</button>
+    </div>
+  </section>
+
   <section id="area" class="section-alt">
     <div class="container">
       <div class="section-title reveal">
-        <h2>Контакты и зоны обслуживания</h2>
+        <h2>Контакты и формат работы</h2>
       </div>
       <div class="geo-grid">
         <div class="geo-card reveal">
-          <h3>🏙️ Саранск (выезд на дом)</h3>
-          <p>Выезжаем на дом по всему Саранску: Центр, Юго-Запад, Химмаш, Светотехстрой и пригород.</p>
+          <h3>🏠 Саранск (приём на дому у мастера)</h3>
+          <p>Мастер в Саранске работает на дому (без выезда к клиенту). Вы привозите технику в удобное время после согласования заявки.</p>
           <a href="tel:+79510536608" class="geo-phone">📞 +7 951 053-66-08</a>
           <button class="btn" onclick="openClientModal('new', 'Саранск')">Оставить заявку в Саранск</button>
         </div>
         <div class="geo-card reveal">
-          <h3>🏡 Атюрьево (по всему Атюрьево)</h3>
-          <p>Обслуживаем всё село Атюрьево и Атюрьевский район. Быстрый выезд на адрес по договоренности.</p>
+          <h3>🏡 Атюрьево (выезд по всему району)</h3>
+          <p>Обслуживаем всё село Атюрьево и Атюрьевский район с выездом на адрес по договорённости.</p>
           <a href="tel:+79520785482" class="geo-phone">📞 +7 952 078-54-82</a>
           <button class="btn" onclick="openClientModal('new', 'Атюрьево')">Оставить заявку в Атюрьево</button>
         </div>
@@ -1042,7 +738,7 @@
       <div class="footer-top">
         <div>
           <strong style="color: #fff; font-size: 1.05rem;">💻 РемКомп13</strong>
-          <p style="margin-top: 4px;">Частный ремонт компьютеров и ноутбуков в Саранске и Атюрьево</p>
+          <p style="margin-top: 4px;">Частный ремонт компьютеров и ноутбуков в Саранске (на дому) и Атюрьево (с выездом)</p>
         </div>
         <div class="footer-phones">
           <a href="tel:+79510536608">Саранск: +7 951 053-66-08</a>
@@ -1056,7 +752,7 @@
           <span style="font-size: 0.8rem; color: #94a3b8;">Нажмите, чтобы свернуть/развернуть</span>
         </summary>
         <div class="agreement-content">
-          <p><strong>1. Общие положения:</strong> Отправляя заявку на ремонт, вопрос или отзыв через данный сайт, Пользователь подтверждает своё согласие с условиями настоящего Пользовательского соглашения. Услуги по Саранску и Атюрьево оказываются соответствующими частными мастерами в индивидуальном порядке.</p>
+          <p><strong>1. Общие положения:</strong> Отправляя заявку на ремонт, вопрос или отзыв через данный сайт, Пользователь подтверждает своё согласие с условиями настоящего Пользовательского соглашения. Услуги в Саранске (на дому у мастера) и Атюрьево (с выездом по району) оказываются соответствующими частными мастерами в индивидуальном порядке.</p>
           <p><strong>2. Ограничение ответственности:</strong> Мастер не несёт ответственности за дальнейший естественный износ техники, скрытые заводские дефекты, а также за ущерб или поломки всего устройства (либо отдельных его узлов и комплектующих), возникшие после завершения ремонта и передачи исправного оборудования клиенту.</p>
           <p><strong>3. Сохранность информации:</strong> Пользователь обязуется самостоятельно позаботиться о резервном копировании важных файлов до передачи устройства в ремонт. Мастер не несёт ответственности за утрату данных, программ или настроек при сбоях накопителей (HDD/SSD) и переустановке операционной системы.</p>
           <p><strong>4. Порядок согласования цены:</strong> Ориентировочная или итоговая цена ремонта указывается мастером в ответе на заявку и окончательно согласовывается с клиентом до начала выполнения работ.</p>
@@ -1087,8 +783,8 @@
           <div class="form-group">
             <label for="cCity">Город / Село</label>
             <select id="cCity" required>
-              <option value="Саранск">Саранск (выезд на дом)</option>
-              <option value="Атюрьево">Атюрьево (по всему Атюрьево)</option>
+              <option value="Саранск">Саранск (приём на дому у мастера)</option>
+              <option value="Атюрьево">Атюрьево (выезд по всему району)</option>
             </select>
           </div>
           <div class="form-group">
@@ -1234,11 +930,10 @@
   <script src="https://gstatic.com"></script>
   <script src="https://gstatic.com"></script>
   <script>
-    // 1. АККАУНТЫ МАСТЕРОВ (ЛОГИНЫ И ПАРОЛИ ПРЯМО В КОДЕ)
     const MASTERS = {
       "saransk": {
         password: "123",
-        name: "Мастер — Саранск (+7 951 053-66-08)",
+        name: "Мастер — Саранск на дому (+7 951 053-66-08)",
         defaultCity: "Саранск"
       },
       "aturyevo": {
@@ -1248,31 +943,27 @@
       }
     };
 
-    // 2. ПОДКЛЮЧЕНИЕ ВАШЕЙ БАЗЫ FIREBASE REALTIME DATABASE
     const DB_FULL_URL = ["https://", "remont-7991d-default-rtdb", "://"].join("");
-    const firebaseConfig = {
-      databaseURL: DB_FULL_URL
-    };
-
     let db = null;
     let isFirebaseReady = false;
 
     try {
-      firebase.initializeApp(firebaseConfig);
-      db = firebase.database();
-      isFirebaseReady = true;
+      if (typeof firebase !== "undefined") {
+        firebase.initializeApp({ databaseURL: DB_FULL_URL });
+        db = firebase.database();
+        isFirebaseReady = true;
+      }
     } catch (e) {
       console.error("Ошибка Firebase:", e);
     }
 
     function getLocalData(key) {
-      return JSON.parse(localStorage.getItem(key) || "{}");
+      try { return JSON.parse(localStorage.getItem(key) || "{}"); } catch (e) { return {}; }
     }
     function setLocalData(key, val) {
-      localStorage.setItem(key, JSON.stringify(val));
+      try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {}
     }
 
-    // 3. ПЕРЕКЛЮЧАТЕЛЬ СВЕТЛОЙ / ТЁМНОЙ ТЕМЫ
     const themeToggleBtn = document.getElementById("themeToggle");
     function applyTheme(theme) {
       if (theme === "dark") {
@@ -1284,24 +975,20 @@
       }
       localStorage.setItem("site_theme", theme);
     }
-
     applyTheme(localStorage.getItem("site_theme") || "light");
 
-    themeToggleBtn.addEventListener("click", () => {
+    themeToggleBtn.addEventListener("click", function() {
       const current = document.documentElement.getAttribute("data-theme");
       applyTheme(current === "dark" ? "light" : "dark");
     });
 
-    // 4. АНИМАЦИЯ ПОЯВЛЕНИЯ БЛОКОВ ПРИ СКРОЛЛЕ
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    const revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
         if (entry.isIntersecting) entry.target.classList.add("visible");
       });
     }, { threshold: 0.1 });
+    document.querySelectorAll(".reveal").forEach(function(el) { revealObserver.observe(el); });
 
-    document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
-
-    // 5. ЗВУК И СИСТЕМНЫЕ УВЕДОМЛЕНИЯ (МАСТЕРАМ И КЛИЕНТАМ)
     function requestNotifyPermission() {
       if ("Notification" in window && Notification.permission === "default") {
         Notification.requestPermission();
@@ -1325,194 +1012,59 @@
 
     function triggerNotification(title, body, onClickCallback) {
       playBeep();
-
       const container = document.getElementById("toastContainer");
       const toast = document.createElement("div");
       toast.className = "toast-banner";
-      toast.innerHTML = `<strong>${title}</strong><span>${body}</span>`;
-      toast.onclick = () => {
+      toast.innerHTML = "<strong>" + title + "</strong><span>" + body + "</span>";
+      toast.onclick = function() {
         if (onClickCallback) onClickCallback();
         toast.remove();
       };
       container.appendChild(toast);
-      setTimeout(() => { if (toast.parentNode) toast.remove(); }, 8000);
+      setTimeout(function() { if (toast.parentNode) toast.remove(); }, 8000);
 
       if ("Notification" in window && Notification.permission === "granted") {
         const sysNotif = new Notification(title, { body: body });
-        sysNotif.onclick = () => {
+        sysNotif.onclick = function() {
           window.focus();
           if (onClickCallback) onClickCallback();
         };
       }
     }
-    // 6. УПРАВЛЕНИЕ МОДАЛЬНЫМИ ОКНАМИ
-    function openClientModal(tab = "new", presetCity = null) {
-      requestNotifyPermission();
-      document.getElementById("clientModal").classList.add("active");
-      if (presetCity) document.getElementById("cCity").value = presetCity;
-      switchClientTab(tab);
-    }
-
-    function openFeedbackModal(tab = "new", presetType = null) {
-      document.getElementById("feedbackModal").classList.add("active");
-      if (presetType) {
-        document.getElementById("fbType").value = presetType;
-        toggleRatingField();
-      }
-      switchFeedbackTab(tab);
-    }
-
-    function openMasterModal() {
-      requestNotifyPermission();
-      document.getElementById("masterModal").classList.add("active");
-      const saved = sessionStorage.getItem("loggedMaster");
-      if (saved && MASTERS[saved]) showMasterDashboard(saved);
-    }
-
-    function closeModals() {
-      document.querySelectorAll(".modal-overlay").forEach((m) => m.classList.remove("active"));
-    }
-
-    document.querySelectorAll(".modal-overlay").forEach((overlay) => {
-      overlay.addEventListener("click", (e) => {
-        if (e.target === overlay) closeModals();
-      });
-    });
-
-    // 7. ЛОГИКА ОКОШКА КЛИЕНТА (ЗАЯВКИ И УВЕДОМЛЕНИЕ ОБ ОТВЕТЕ)
-    function switchClientTab(tab) {
-      const isNew = tab === "new";
-      document.getElementById("clientNewTab").style.display = isNew ? "block" : "none";
-      document.getElementById("clientCheckTab").style.display = isNew ? "none" : "block";
-      document.getElementById("tabNewBtn").classList.toggle("active", isNew);
-      document.getElementById("tabCheckBtn").classList.toggle("active", !isNew);
-
-      if (!isNew) {
-        const lastCode = localStorage.getItem("last_order_code");
-        if (lastCode) {
-          document.getElementById("searchOrderCode").value = lastCode;
-          checkOrderStatus();
-        }
-      }
-    }
-
-    document.getElementById("clientOrderForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      requestNotifyPermission();
-
-      const code = String(Math.floor(1000 + Math.random() * 9000));
-      const orderData = {
-        code: code,
-        name: document.getElementById("cName").value.trim(),
-        city: document.getElementById("cCity").value,
-        phone: document.getElementById("cPhone").value.trim(),
-        problem: document.getElementById("cProblem").value.trim(),
-        reply: "",
-        createdAt: new Date().toLocaleString("ru-RU", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })
-      };
-
-      localStorage.setItem("last_order_code", code);
-      localStorage.setItem("last_known_reply_" + code, "");
-
-      if (isFirebaseReady) {
-        db.ref("orders/" + code).set(orderData).then(() => {
-          this.reset();
-          switchClientTab("check");
-          watchClientOrderReply(code);
-        });
-      } else {
-        const all = getLocalData("remkomp_orders");
-        all[code] = orderData;
-        setLocalData("remkomp_orders", all);
-        this.reset();
-        switchClientTab("check");
-      }
-    });
-
-    function checkOrderStatus() {
-      const code = document.getElementById("searchOrderCode").value.trim();
-      const resultBox = document.getElementById("clientOrderResult");
-      if (!code) return;
-
-      const renderCard = (order) => {
-        if (!order) {
-          resultBox.innerHTML = `<div class="status-card" style="color:#ef4444;">Заявка <b>#${code}</b> не найдена. Проверьте правильность номера.</div>`;
-          return;
-        }
-        resultBox.innerHTML = `
-          <div class="status-card">
-            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-              <strong>Заявка #${order.code} (${order.city})</strong>
-              <span style="color:var(--text-muted); font-size:0.85rem;">${order.createdAt}</span>
-            </div>
-            <p style="font-size:0.92rem; margin-bottom:4px;"><b>Имя:</b> ${order.name} | <b>Тел:</b> ${order.phone}</p>
-            <p style="font-size:0.92rem; color:var(--text-muted);"><b>Проблема:</b> ${order.problem}</p>
-            <div class="master-reply-box">
-              ${order.reply 
-                ? `💬 <b>Ответ мастера:</b> \${order.reply}` 
-                : `⏳ Заявка принята! Ожидайте ответ — <b>цена будет указана в ответе на заявку</b>.`}
-            </div>
-          </div>
-        `;
-      };
-
-      if (isFirebaseReady) {
-        db.ref("orders/" + code).on("value", (snap) => renderCard(snap.val()));
-      } else {
-        renderCard(getLocalData("remkomp_orders")[code]);
-      }
-    }
-
-    function watchClientOrderReply(code) {
-      if (!isFirebaseReady || !code) return;
-      db.ref("orders/" + code).on("value", (snap) => {
-        const order = snap.val();
-        if (!order) return;
-        const prevReply = localStorage.getItem("last_known_reply_" + code) || "";
-        if (order.reply && order.reply !== prevReply) {
-          localStorage.setItem("last_known_reply_" + code, order.reply);
-          triggerNotification(
-            "Пришел ответ на вашу заявку! Подробнее на сайте...",
-            `Заявка #${code}: ${order.reply}`,
-            () => openClientModal("check")
-          );
-        }
-      });
-    }
-
     const savedClientCode = localStorage.getItem("last_order_code");
     if (savedClientCode) watchClientOrderReply(savedClientCode);
-    // 8. ОКОШКО ЖАЛОБЫ / ОТЗЫВА / ВОПРОСА И БЕГУЩАЯ ЛЕНТА ОТЗЫВОВ
+
     const DEFAULT_REVIEWS = [
-      { name: "Александр", city: "Саранск", rating: 5, text: "Мастер приехал на Юго-Запад через 40 минут, почистил ноутбук от пыли и заменил термопасту. Температуры упали, работает тихо!", reply: "Спасибо за обращение! Рад был помочь." },
-      { name: "Елена", city: "Атюрьево", rating: 5, text: "Очень удобно, что в Атюрьево есть свой мастер. Быстро переустановил Windows и настроил Wi-Fi, все фотографии сохранил.", reply: "" },
-      { name: "Дмитрий", city: "Саранск", rating: 5, text: "Оставил заявку на сайте, через 10 минут пришел ответ с точной ценой. Поставили SSD в старый компьютер — теперь летает!", reply: "" },
-      { name: "Сергей", city: "Атюрьево", rating: 5, text: "Отремонтировал разъём питания на ноутбуке, цена адекватная и без лишних накруток. Рекомендую!", reply: "" }
+      { name: "Александр", city: "Саранск", rating: 5, text: "Привёз ноутбук мастеру на дом в Саранске, почистил от пыли и заменил термопасту. Температуры упали, работает тихо!", reply: "Спасибо за обращение! Рад был помочь." },
+      { name: "Елена", city: "Атюрьево", rating: 5, text: "Очень удобно, что в Атюрьево мастер сам приезжает на дом. Быстро переустановил Windows и настроил Wi-Fi, все фотографии сохранил.", reply: "" },
+      { name: "Дмитрий", city: "Саранск", rating: 5, text: "Оставил заявку на сайте, через 10 минут пришел ответ с точной ценой. Отвёз системник в Саранске, поставили SSD — теперь летает!", reply: "" },
+      { name: "Сергей", city: "Атюрьево", rating: 5, text: "Мастер приехал по Атюрьево, отремонтировал разъём питания на ноутбуке, цена адекватная и без лишних накруток. Рекомендую!", reply: "" }
     ];
 
-    function renderMarqueeReviews(firebaseReviewsList = []) {
+    function renderMarqueeReviews(firebaseReviewsList) {
+      firebaseReviewsList = firebaseReviewsList || [];
       const track = document.getElementById("reviewsMarqueeTrack");
-      const combined = [...DEFAULT_REVIEWS, ...firebaseReviewsList];
-      const loopItems = [...combined, ...combined];
+      const combined = DEFAULT_REVIEWS.concat(firebaseReviewsList);
+      const loopItems = combined.concat(combined);
 
-      track.innerHTML = loopItems.map((rev) => {
-        const stars = "★".repeat(Number(rev.rating) || 5) + "☆".repeat(5 - (Number(rev.rating) || 5));
-        return `
-          <div class="review-card">
-            <div class="review-top">
-              <span class="review-author">${rev.name}</span>
-              <span class="review-city">${rev.city}</span>
-            </div>
-            <div class="review-stars">${stars}</div>
-            <p class="review-text">${rev.text}</p>
-            ${rev.reply ? `<div class="review-master-reply"><b>Ответ мастера:</b> \${rev.reply}</div>` : ""}
-          </div>
-        `;
+      track.innerHTML = loopItems.map(function(rev) {
+        const r = Number(rev.rating) || 5;
+        const stars = "★".repeat(r) + "☆".repeat(5 - r);
+        const replyBlock = rev.reply ? '<div class="review-master-reply"><b>Ответ мастера:</b> ' + rev.reply + '</div>' : '';
+        return (
+          '<div class="review-card">' +
+            '<div class="review-top">' +
+              '<span class="review-author">' + rev.name + '</span>' +
+              '<span class="review-city">' + rev.city + '</span>' +
+            '</div>' +
+            '<div class="review-stars">' + stars + '</div>' +
+            '<p class="review-text">' + rev.text + '</p>' +
+            replyBlock +
+          '</div>'
+        );
       }).join("");
     }
-
     renderMarqueeReviews([]);
-
     function switchFeedbackTab(tab) {
       const isNew = tab === "new";
       document.getElementById("feedbackNewTab").style.display = isNew ? "block" : "none";
@@ -1526,8 +1078,9 @@
       document.getElementById("ratingGroup").style.display = type === "Отзыв" ? "block" : "none";
     }
 
-    document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+    document.getElementById("feedbackForm").addEventListener("submit", function(e) {
       e.preventDefault();
+      const form = this;
       const id = "fb_" + Date.now();
       const fbData = {
         id: id,
@@ -1540,9 +1093,9 @@
         createdAt: new Date().toLocaleString("ru-RU", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })
       };
 
-      if (isFirebaseReady) {
-        db.ref("feedback/" + id).set(fbData).then(() => {
-          this.reset();
+      if (isFirebaseReady && db) {
+        db.ref("feedback/" + id).set(fbData).then(function() {
+          form.reset();
           toggleRatingField();
           switchFeedbackTab("list");
         });
@@ -1550,7 +1103,7 @@
         const all = getLocalData("remkomp_feedback");
         all[id] = fbData;
         setLocalData("remkomp_feedback", all);
-        this.reset();
+        form.reset();
         toggleRatingField();
         loadFeedbackData();
         switchFeedbackTab("list");
@@ -1560,45 +1113,46 @@
     let cachedFeedback = {};
 
     function loadFeedbackData() {
-      const updateViews = (dataObj) => {
+      function updateViews(dataObj) {
         cachedFeedback = dataObj || {};
         const arr = Object.values(cachedFeedback).reverse();
 
-        const onlyReviews = arr.filter((item) => item.type === "Отзыв");
+        const onlyReviews = arr.filter(function(item) { return item.type === "Отзыв"; });
         renderMarqueeReviews(onlyReviews);
 
         const listEl = document.getElementById("publicFeedbackList");
         if (arr.length === 0) {
-          listEl.innerHTML = `<p style="color:var(--text-muted);">Пока нет опубликованных обращений.</p>`;
+          listEl.innerHTML = '<p style="color:var(--text-muted);">Пока нет опубликованных обращений.</p>';
         } else {
-          listEl.innerHTML = arr.map((item) => `
-            <div class="status-card">
-              <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
-                <strong>[${item.type}] ${item.name} (${item.city})</strong>
-                <span style="font-size:0.82rem; color:var(--text-muted);">${item.createdAt}</span>
-              </div>
-              <p style="font-size:0.92rem;">${item.text}</p>
-              ${item.reply ? `<div class="master-reply-box">💬 <b>Ответ мастера:</b> \${item.reply}</div>` : ""}
-            </div>
-          `).join("");
+          listEl.innerHTML = arr.map(function(item) {
+            const replyBlock = item.reply ? '<div class="master-reply-box">💬 <b>Ответ мастера:</b> ' + item.reply + '</div>' : '';
+            return (
+              '<div class="status-card">' +
+                '<div style="display:flex; justify-content:space-between; margin-bottom:6px;">' +
+                  '<strong>[' + item.type + '] ' + item.name + ' (' + item.city + ')</strong>' +
+                  '<span style="font-size:0.82rem; color:var(--text-muted);">' + item.createdAt + '</span>' +
+                '</div>' +
+                '<p style="font-size:0.92rem;">' + item.text + '</p>' +
+                replyBlock +
+              '</div>'
+            );
+          }).join("");
         }
 
         if (sessionStorage.getItem("loggedMaster")) renderMasterData();
-      };
+      }
 
-      if (isFirebaseReady) {
-        db.ref("feedback").on("value", (snap) => updateViews(snap.val()));
+      if (isFirebaseReady && db) {
+        db.ref("feedback").on("value", function(snap) { updateViews(snap.val()); });
       } else {
         updateViews(getLocalData("remkomp_feedback"));
       }
     }
-
     loadFeedbackData();
-    // 9. КАБИНЕТ МАСТЕРОВ (УВЕДОМЛЕНИЯ О НОВЫХ ЗАЯВКАХ И ОТВЕТЫ)
     let cachedOrders = {};
     let knownOrderKeys = null;
 
-    document.getElementById("masterLoginForm").addEventListener("submit", function (e) {
+    document.getElementById("masterLoginForm").addEventListener("submit", function(e) {
       e.preventDefault();
       requestNotifyPermission();
       const login = document.getElementById("mLogin").value.trim().toLowerCase();
@@ -1621,21 +1175,21 @@
       document.getElementById("masterWelcome").textContent = info.name;
       document.getElementById("masterFilter").value = info.defaultCity;
 
-      if (isFirebaseReady) {
-        db.ref("orders").on("value", (snap) => {
+      if (isFirebaseReady && db) {
+        db.ref("orders").on("value", function(snap) {
           const data = snap.val() || {};
           const keys = Object.keys(data);
 
           if (knownOrderKeys !== null) {
-            keys.forEach((k) => {
-              if (!knownOrderKeys.includes(k)) {
+            keys.forEach(function(k) {
+              if (knownOrderKeys.indexOf(k) === -1) {
                 const newOrder = data[k];
                 const filter = document.getElementById("masterFilter").value;
                 if (filter === "ALL" || newOrder.city === filter) {
                   triggerNotification(
                     "Пришла заявка на ремонт компьютера! Подробнее на сайте...",
-                    `${newOrder.city}: ${newOrder.name} — ${newOrder.problem}`,
-                    () => { openMasterModal(); switchMasterTab("orders"); }
+                    newOrder.city + ": " + newOrder.name + " — " + newOrder.problem,
+                    function() { openMasterModal(); switchMasterTab("orders"); }
                   );
                 }
               }
@@ -1665,75 +1219,78 @@
       document.getElementById("mTabOrdersBtn").classList.toggle("active", isOrders);
       document.getElementById("mTabFbBtn").classList.toggle("active", !isOrders);
     }
-
     function renderMasterData() {
       const filter = document.getElementById("masterFilter").value;
 
       const ordersEl = document.getElementById("masterOrdersList");
-      const orderKeys = Object.keys(cachedOrders).reverse().filter((k) => {
+      const orderKeys = Object.keys(cachedOrders).reverse().filter(function(k) {
         return filter === "ALL" || cachedOrders[k].city === filter;
       });
 
       if (orderKeys.length === 0) {
-        ordersEl.innerHTML = `<p style="color:var(--text-muted); text-align:center; padding:20px;">Заявок для выбранного района пока нет.</p>`;
+        ordersEl.innerHTML = '<p style="color:var(--text-muted); text-align:center; padding:20px;">Заявок для выбранного района пока нет.</p>';
       } else {
-        ordersEl.innerHTML = orderKeys.map((code) => {
+        ordersEl.innerHTML = orderKeys.map(function(code) {
           const item = cachedOrders[code];
-          return `
-            <div class="order-item">
-              <div class="order-header">
-                <div>
-                  <span class="city-tag">${item.city}</span>
-                  <strong style="margin-left:8px;">#${item.code} — ${item.name}</strong>
-                </div>
-                <span style="font-size:0.84rem; color:var(--text-muted);">${item.createdAt}</span>
-              </div>
-              <p style="margin-bottom:6px;">📞 <a href="tel:${item.phone}" style="color:var(--primary); font-weight:700; text-decoration:none;">${item.phone}</a></p>
-              <p style="font-size:0.94rem; margin-bottom:10px;"><b>Проблема:</b> ${item.problem}</p>
-              ${item.reply ? `<div class="master-reply-box" style="margin-bottom:10px;">Ваш ответ: ${item.reply}</div>` : ""}
-              <div class="reply-controls">
-                <input type="text" id="replyInput_${code}" placeholder="Напишите ответ и цену ремонта..." value="${item.reply || ""}" />
-                <button class="btn" style="padding:9px 14px;" onclick="sendMasterReply('${code}')">Отправить</button>
-                <button class="btn" style="background:#64748b; padding:9px 12px;" onclick="deleteOrder('${code}')" title="Удалить">🗑</button>
-              </div>
-            </div>
-          `;
+          const replyBlock = item.reply ? '<div class="master-reply-box" style="margin-bottom:10px;">Ваш ответ: ' + item.reply + '</div>' : '';
+          const safeReplyVal = (item.reply || "").replace(/"/g, "&quot;");
+          return (
+            '<div class="order-item">' +
+              '<div class="order-header">' +
+                '<div>' +
+                  '<span class="city-tag">' + item.city + '</span>' +
+                  '<strong style="margin-left:8px;">#' + item.code + ' — ' + item.name + '</strong>' +
+                '</div>' +
+                '<span style="font-size:0.84rem; color:var(--text-muted);">' + item.createdAt + '</span>' +
+              '</div>' +
+              '<p style="margin-bottom:6px;">📞 <a href="tel:' + item.phone + '" style="color:var(--primary); font-weight:700; text-decoration:none;">' + item.phone + '</a></p>' +
+              '<p style="font-size:0.94rem; margin-bottom:10px;"><b>Проблема:</b> ' + item.problem + '</p>' +
+              replyBlock +
+              '<div class="reply-controls">' +
+                '<input type="text" id="replyInput_' + code + '" placeholder="Напишите ответ и цену ремонта..." value="' + safeReplyVal + '" />' +
+                '<button class="btn" style="padding:9px 14px;" onclick="sendMasterReply(\'' + code + '\')">Отправить</button>' +
+                '<button class="btn" style="background:#64748b; padding:9px 12px;" onclick="deleteOrder(\'' + code + '\')" title="Удалить">🗑</button>' +
+              '</div>' +
+            '</div>'
+          );
         }).join("");
       }
 
       const fbEl = document.getElementById("masterFeedbackList");
-      const fbKeys = Object.keys(cachedFeedback).reverse().filter((k) => {
+      const fbKeys = Object.keys(cachedFeedback).reverse().filter(function(k) {
         return filter === "ALL" || cachedFeedback[k].city === filter;
       });
 
       if (fbKeys.length === 0) {
-        fbEl.innerHTML = `<p style="color:var(--text-muted); text-align:center; padding:20px;">Отзывов, вопросов и жалоб пока нет.</p>`;
+        fbEl.innerHTML = '<p style="color:var(--text-muted); text-align:center; padding:20px;">Отзывов, вопросов и жалоб пока нет.</p>';
       } else {
-        fbEl.innerHTML = fbKeys.map((id) => {
+        fbEl.innerHTML = fbKeys.map(function(id) {
           const item = cachedFeedback[id];
           let tagClass = "type-tag-review";
           if (item.type === "Жалоба") tagClass = "type-tag-complaint";
           if (item.type === "Вопрос") tagClass = "type-tag-question";
+          const replyBlock = item.reply ? '<div class="master-reply-box" style="margin-bottom:10px;">Ваш ответ: ' + item.reply + '</div>' : '';
+          const safeReplyVal = (item.reply || "").replace(/"/g, "&quot;");
 
-          return `
-            <div class="order-item">
-              <div class="order-header">
-                <div>
-                  <span class="city-tag ${tagClass}">${item.type}</span>
-                  <span class="city-tag">${item.city}</span>
-                  <strong style="margin-left:8px;">${item.name}</strong>
-                </div>
-                <span style="font-size:0.84rem; color:var(--text-muted);">${item.createdAt}</span>
-              </div>
-              <p style="font-size:0.94rem; margin-bottom:10px;">${item.text}</p>
-              ${item.reply ? `<div class="master-reply-box" style="margin-bottom:10px;">Ваш ответ: ${item.reply}</div>` : ""}
-              <div class="reply-controls">
-                <input type="text" id="fbReplyInput_${id}" placeholder="Напишите ответ..." value="${item.reply || ""}" />
-                <button class="btn" style="padding:9px 14px;" onclick="sendFeedbackReply('${id}')">Ответить</button>
-                <button class="btn" style="background:#64748b; padding:9px 12px;" onclick="deleteFeedback('${id}')" title="Удалить">🗑</button>
-              </div>
-            </div>
-          `;
+          return (
+            '<div class="order-item">' +
+              '<div class="order-header">' +
+                '<div>' +
+                  '<span class="city-tag ' + tagClass + '">' + item.type + '</span> ' +
+                  '<span class="city-tag">' + item.city + '</span>' +
+                  '<strong style="margin-left:8px;">' + item.name + '</strong>' +
+                '</div>' +
+                '<span style="font-size:0.84rem; color:var(--text-muted);">' + item.createdAt + '</span>' +
+              '</div>' +
+              '<p style="font-size:0.94rem; margin-bottom:10px;">' + item.text + '</p>' +
+              replyBlock +
+              '<div class="reply-controls">' +
+                '<input type="text" id="fbReplyInput_' + id + '" placeholder="Напишите ответ..." value="' + safeReplyVal + '" />' +
+                '<button class="btn" style="padding:9px 14px;" onclick="sendFeedbackReply(\'' + id + '\')">Ответить</button>' +
+                '<button class="btn" style="background:#64748b; padding:9px 12px;" onclick="deleteFeedback(\'' + id + '\')" title="Удалить">🗑</button>' +
+              '</div>' +
+            '</div>'
+          );
         }).join("");
       }
     }
@@ -1741,7 +1298,7 @@
     function sendMasterReply(code) {
       const text = document.getElementById("replyInput_" + code).value.trim();
       if (!text) return;
-      if (isFirebaseReady) {
+      if (isFirebaseReady && db) {
         db.ref("orders/" + code + "/reply").set(text);
       } else {
         const all = getLocalData("remkomp_orders");
@@ -1756,7 +1313,7 @@
 
     function deleteOrder(code) {
       if (!confirm("Удалить заявку #" + code + "?")) return;
-      if (isFirebaseReady) {
+      if (isFirebaseReady && db) {
         db.ref("orders/" + code).remove();
       } else {
         const all = getLocalData("remkomp_orders");
@@ -1770,7 +1327,7 @@
     function sendFeedbackReply(id) {
       const text = document.getElementById("fbReplyInput_" + id).value.trim();
       if (!text) return;
-      if (isFirebaseReady) {
+      if (isFirebaseReady && db) {
         db.ref("feedback/" + id + "/reply").set(text);
       } else {
         const all = getLocalData("remkomp_feedback");
@@ -1784,7 +1341,7 @@
 
     function deleteFeedback(id) {
       if (!confirm("Удалить это обращение?")) return;
-      if (isFirebaseReady) {
+      if (isFirebaseReady && db) {
         db.ref("feedback/" + id).remove();
       } else {
         const all = getLocalData("remkomp_feedback");
