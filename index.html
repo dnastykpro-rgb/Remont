@@ -7,550 +7,145 @@
   <meta name="description" content="Частные мастера по ремонту компьютеров и ноутбуков. Приём на дому в Саранске (+7 951 053-66-08) и выезд по всему Атюрьево (+7 952 078-54-82)." />
   <style>
     :root {
-      --bg-body: #f8fafc;
-      --bg-alt: #f1f5f9;
-      --bg-card: #ffffff;
-      --bg-header: rgba(255, 255, 255, 0.92);
-      --text-main: #0f172a;
-      --text-muted: #475569;
-      --border: #e2e8f0;
-      --primary: #2563eb;
-      --primary-hover: #1d4ed8;
-      --primary-glow: rgba(37, 99, 235, 0.45);
-      --accent: #10b981;
-      --input-bg: #ffffff;
-      --shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+      --bg-body: #f8fafc; --bg-alt: #f1f5f9; --bg-card: #ffffff; --bg-header: rgba(255, 255, 255, 0.92);
+      --text-main: #0f172a; --text-muted: #475569; --border: #e2e8f0;
+      --primary: #2563eb; --primary-hover: #1d4ed8; --primary-glow: rgba(37, 99, 235, 0.45);
+      --accent: #10b981; --input-bg: #ffffff; --shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
     }
-
     [data-theme="dark"] {
-      --bg-body: #0b1120;
-      --bg-alt: #0f172a;
-      --bg-card: #1e293b;
-      --bg-header: rgba(15, 23, 42, 0.92);
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --border: #334155;
-      --primary: #3b82f6;
-      --primary-hover: #2563eb;
-      --primary-glow: rgba(59, 130, 246, 0.5);
-      --accent: #10b981;
-      --input-bg: #0f172a;
-      --shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+      --bg-body: #0b1120; --bg-alt: #0f172a; --bg-card: #1e293b; --bg-header: rgba(15, 23, 42, 0.92);
+      --text-main: #f8fafc; --text-muted: #94a3b8; --border: #334155;
+      --primary: #3b82f6; --primary-hover: #2563eb; --primary-glow: rgba(59, 130, 246, 0.5);
+      --accent: #10b981; --input-bg: #0f172a; --shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text-main);
-      background-color: var(--bg-body);
-      line-height: 1.6;
-      overflow-x: hidden;
-      transition: background-color 0.35s ease, color 0.35s ease;
+      color: var(--text-main); background-color: var(--bg-body); line-height: 1.6;
+      overflow-x: hidden; transition: background-color 0.35s ease, color 0.35s ease;
     }
-
     .container { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
-
-    @keyframes gradientFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    @keyframes floatSlow {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(0.8deg); }
-    }
-    @keyframes pulseGlow {
-      0% { box-shadow: 0 0 0 0 var(--primary-glow); }
-      70% { box-shadow: 0 0 0 14px rgba(37, 99, 235, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
-    }
-    @keyframes modalPop {
-      from { opacity: 0; transform: scale(0.92) translateY(20px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    @keyframes slideUpFade {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes marqueeLeft {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    @keyframes toastSlideIn {
-      from { opacity: 0; transform: translateX(120%); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-    }
+    @keyframes gradientFlow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    @keyframes floatSlow { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-10px) rotate(0.8deg); } }
+    @keyframes pulseGlow { 0% { box-shadow: 0 0 0 0 var(--primary-glow); } 70% { box-shadow: 0 0 0 14px rgba(37, 99, 235, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); } }
+    @keyframes modalPop { from { opacity: 0; transform: scale(0.92) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    @keyframes slideUpFade { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes marqueeLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes toastSlideIn { from { opacity: 0; transform: translateX(120%); } to { opacity: 1; transform: translateX(0); } }
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    header {
-      background: var(--bg-header);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      transition: background-color 0.35s ease, border-color 0.35s ease;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      min-height: 74px;
-      gap: 12px;
-      flex-wrap: wrap;
-      padding: 8px 0;
-    }
-
-    .logo {
-      font-weight: 800;
-      font-size: 1.25rem;
-      color: var(--text-main);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: transform 0.25s ease;
-    }
+    header { background: var(--bg-header); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; transition: background-color 0.35s ease, border-color 0.35s ease; }
+    .nav { display: flex; justify-content: space-between; align-items: center; min-height: 74px; gap: 12px; flex-wrap: wrap; padding: 8px 0; }
+    .logo { font-weight: 800; font-size: 1.25rem; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: transform 0.25s ease; }
     .logo:hover { transform: scale(1.04); }
     .logo span { color: var(--primary); }
-
     .nav-links { display: flex; gap: 20px; list-style: none; }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-muted);
-      font-weight: 600;
-      font-size: 0.92rem;
-      position: relative;
-      transition: color 0.2s;
-    }
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0%;
-      height: 2px;
-      background: var(--primary);
-      transition: width 0.3s ease;
-    }
+    .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.92rem; position: relative; transition: color 0.2s; }
     .nav-links a:hover { color: var(--primary); }
-    .nav-links a:hover::after { width: 100%; }
-
     .nav-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-
-    .theme-toggle {
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      color: var(--text-main);
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 1.15rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-    }
+    .theme-toggle { background: var(--bg-alt); border: 1px solid var(--border); color: var(--text-main); width: 40px; height: 40px; border-radius: 10px; cursor: pointer; font-size: 1.15rem; display: inline-flex; align-items: center; justify-content: center; transition: transform 0.3s ease, background-color 0.3s ease; }
     .theme-toggle:hover { transform: rotate(20deg) scale(1.08); border-color: var(--primary); }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 7px;
-      background: var(--primary);
-      color: #ffffff;
-      padding: 10px 18px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.92rem;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-    }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; background: var(--primary); color: #ffffff; padding: 10px 18px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.92rem; border: none; cursor: pointer; transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
     .btn:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3); }
-    .btn:active { transform: scale(0.97); }
     .btn-pulse { animation: pulseGlow 2.2s infinite; }
-
     .btn-secondary { background: var(--bg-alt); color: var(--text-main); border: 1px solid var(--border); }
-    .btn-secondary:hover { background: var(--border); box-shadow: none; }
-
+    .btn-secondary:hover { background: var(--border); }
     .btn-master { background: #0f172a; color: #ffffff; border: 1px solid #334155; }
     .btn-master:hover { background: #1e293b; }
-
     .btn-outline-light { background: rgba(255, 255, 255, 0.08); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.3); }
     .btn-outline-light:hover { background: rgba(255, 255, 255, 0.16); border-color: #ffffff; }
-
-    .hero {
-      background: linear-gradient(-45deg, #0f172a, #1e3a8a, #0f172a, #172554);
-      background-size: 400% 400%;
-      animation: gradientFlow 12s ease infinite;
-      color: #ffffff;
-      padding: 78px 0;
-      position: relative;
-      overflow: hidden;
-    }
+    .hero { background: linear-gradient(-45deg, #0f172a, #1e3a8a, #0f172a, #172554); background-size: 400% 400%; animation: gradientFlow 12s ease infinite; color: #ffffff; padding: 78px 0; position: relative; overflow: hidden; }
     .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; align-items: center; }
-    .badge {
-      display: inline-block;
-      background: rgba(59, 130, 246, 0.25);
-      border: 1px solid rgba(147, 197, 253, 0.4);
-      color: #93c5fd;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 16px;
-      animation: slideUpFade 0.6s ease both;
-    }
+    .badge { display: inline-block; background: rgba(59, 130, 246, 0.25); border: 1px solid rgba(147, 197, 253, 0.4); color: #93c5fd; padding: 6px 14px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; animation: slideUpFade 0.6s ease both; }
     .hero h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 16px; animation: slideUpFade 0.8s ease both; }
     .hero p { color: #cbd5e1; font-size: 1.05rem; margin-bottom: 26px; animation: slideUpFade 1s ease both; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; animation: slideUpFade 1.15s ease both; }
-
     .masters-cards { display: flex; flex-direction: column; gap: 16px; animation: slideUpFade 1s ease both; }
-    .master-pill {
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      backdrop-filter: blur(8px);
-      border-radius: 16px;
-      padding: 20px 22px;
-      transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
-    }
+    .master-pill { background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.16); backdrop-filter: blur(8px); border-radius: 16px; padding: 20px 22px; transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease; }
     .master-pill:hover { transform: translateX(8px); background: rgba(255, 255, 255, 0.12); border-color: #60a5fa; }
     .master-pill strong { display: block; font-size: 1.12rem; color: #ffffff; margin-bottom: 4px; }
     .master-pill p { font-size: 0.92rem; color: #cbd5e1; margin-bottom: 10px; }
-
-    .phone-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: #93c5fd;
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 1.02rem;
-      transition: color 0.2s;
-    }
+    .phone-link { display: inline-flex; align-items: center; gap: 6px; color: #93c5fd; font-weight: 700; text-decoration: none; font-size: 1.02rem; }
     .phone-link:hover { color: #ffffff; }
     section { padding: 72px 0; transition: background-color 0.35s ease; }
     .section-alt { background-color: var(--bg-alt); }
     .section-title { text-align: center; margin-bottom: 44px; }
     .section-title h2 { font-size: 2rem; margin-bottom: 10px; }
     .section-title p { color: var(--text-muted); max-width: 640px; margin: 0 auto; }
-
-    .price-hint-banner {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.35);
-      color: var(--accent);
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.92rem;
-      margin-top: 14px;
-    }
-
+    .price-hint-banner { display: inline-flex; align-items: center; gap: 8px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); color: var(--accent); padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; margin-top: 14px; }
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 26px;
-      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease, background-color 0.35s ease;
-    }
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 26px; transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, background-color 0.35s ease; }
     .card:hover { transform: translateY(-7px); box-shadow: var(--shadow); border-color: var(--primary); }
     .card-icon { font-size: 2rem; margin-bottom: 12px; display: inline-block; transition: transform 0.3s ease; }
     .card:hover .card-icon { transform: scale(1.2) rotate(-5deg); }
     .card h3 { margin-bottom: 8px; font-size: 1.14rem; }
     .card p { color: var(--text-muted); font-size: 0.94rem; margin-bottom: 14px; }
     .price-tag { font-weight: 700; color: var(--primary); font-size: 0.92rem; }
-
     .advantages-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-    .adv-image-box {
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18);
-      animation: floatSlow 5s ease-in-out infinite;
-      border: 4px solid var(--bg-card);
-    }
+    .adv-image-box { position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18); animation: floatSlow 5s ease-in-out infinite; border: 4px solid var(--bg-card); }
     .adv-image-box img { width: 100%; height: auto; display: block; transition: transform 0.6s ease; }
     .adv-image-box:hover img { transform: scale(1.06); }
-    .adv-image-caption {
-      position: absolute;
-      bottom: 14px;
-      left: 14px;
-      right: 14px;
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(6px);
-      color: #ffffff;
-      padding: 10px 16px;
-      border-radius: 12px;
-      font-size: 0.88rem;
-      font-weight: 500;
-    }
-
+    .adv-image-caption { position: absolute; bottom: 14px; left: 14px; right: 14px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(6px); color: #ffffff; padding: 10px 16px; border-radius: 12px; font-size: 0.88rem; font-weight: 500; }
     .adv-list { display: flex; flex-direction: column; gap: 16px; }
-    .adv-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px 20px;
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.35s ease;
-    }
+    .adv-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; display: flex; gap: 16px; align-items: flex-start; transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.35s ease; }
     .adv-item:hover { transform: translateX(6px); border-color: var(--primary); }
-    .adv-num {
-      background: rgba(37, 99, 235, 0.12);
-      color: var(--primary);
-      font-weight: 800;
-      min-width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    .adv-num { background: rgba(37, 99, 235, 0.12); color: var(--primary); font-weight: 800; min-width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
     .adv-item h4 { margin-bottom: 4px; font-size: 1.04rem; }
     .adv-item p { color: var(--text-muted); font-size: 0.92rem; }
-
-    .marquee-wrapper {
-      overflow: hidden;
-      width: 100%;
-      padding: 12px 0 24px;
-      position: relative;
-      mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-    }
+    .marquee-wrapper { overflow: hidden; width: 100%; padding: 12px 0 24px; position: relative; mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent); }
     .marquee-track { display: flex; gap: 20px; width: max-content; animation: marqueeLeft 34s linear infinite; }
     .marquee-wrapper:hover .marquee-track { animation-play-state: paused; }
-
-    .review-card {
-      width: 330px;
-      flex-shrink: 0;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 22px;
-      box-shadow: var(--shadow);
-      transition: border-color 0.3s ease, transform 0.3s ease;
-    }
+    .review-card { width: 330px; flex-shrink: 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 22px; box-shadow: var(--shadow); transition: border-color 0.3s ease, transform 0.3s ease; }
     .review-card:hover { border-color: var(--primary); transform: translateY(-4px); }
     .review-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
     .review-author { font-weight: 700; font-size: 1rem; }
-    .review-city {
-      font-size: 0.78rem;
-      background: rgba(37, 99, 235, 0.12);
-      color: var(--primary);
-      padding: 3px 9px;
-      border-radius: 999px;
-      font-weight: 700;
-    }
+    .review-city { font-size: 0.78rem; background: rgba(37, 99, 235, 0.12); color: var(--primary); padding: 3px 9px; border-radius: 999px; font-weight: 700; }
     .review-stars { color: #f59e0b; font-size: 0.95rem; margin-bottom: 8px; letter-spacing: 2px; }
     .review-text { color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; }
-    .review-master-reply {
-      margin-top: 10px;
-      padding: 8px 12px;
-      background: rgba(16, 185, 129, 0.1);
-      border-left: 3px solid var(--accent);
-      border-radius: 6px;
-      font-size: 0.84rem;
-      color: var(--text-main);
-    }
+    .review-master-reply { margin-top: 10px; padding: 8px 12px; background: rgba(16, 185, 129, 0.1); border-left: 3px solid var(--accent); border-radius: 6px; font-size: 0.84rem; color: var(--text-main); }
     .geo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
-    .geo-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 30px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.35s ease;
-    }
+    .geo-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.35s ease; }
     .geo-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
     .geo-card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.28rem; }
     .geo-card p { color: var(--text-muted); margin-bottom: 14px; }
     .geo-phone { display: block; font-size: 1.15rem; font-weight: 800; color: var(--text-main); text-decoration: none; margin-bottom: 16px; }
     .geo-phone:hover { color: var(--primary); }
-
     footer { background: #0f172a; color: #94a3b8; padding: 44px 0 32px; font-size: 0.92rem; }
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid #1e293b;
-    }
+    .footer-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-bottom: 24px; border-bottom: 1px solid #1e293b; }
     .footer-phones a { color: #e2e8f0; text-decoration: none; font-weight: 600; margin-right: 16px; }
     .footer-phones a:hover { color: #60a5fa; }
-
     .agreement-box { margin-top: 24px; background: #1e293b; border: 1px solid #334155; border-radius: 12px; overflow: hidden; }
-    .agreement-summary {
-      padding: 14px 20px;
-      cursor: pointer;
-      font-weight: 600;
-      color: #e2e8f0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none;
-    }
+    .agreement-summary { padding: 14px 20px; cursor: pointer; font-weight: 600; color: #e2e8f0; display: flex; justify-content: space-between; align-items: center; user-select: none; }
     .agreement-summary:hover { background: #273549; }
     .agreement-content { padding: 14px 20px 18px; color: #cbd5e1; font-size: 0.85rem; line-height: 1.65; border-top: 1px solid #334155; }
     .agreement-content p { margin-bottom: 8px; }
-
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(5px);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-    }
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(5px); z-index: 1000; align-items: center; justify-content: center; padding: 16px; }
     .modal-overlay.active { display: flex; }
-
-    .modal-box {
-      background: var(--bg-card);
-      color: var(--text-main);
-      border: 1px solid var(--border);
-      width: 100%;
-      max-width: 540px;
-      max-height: 90vh;
-      overflow-y: auto;
-      border-radius: 20px;
-      padding: 28px;
-      position: relative;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-      animation: modalPop 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
-    }
+    .modal-box { background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border); width: 100%; max-width: 540px; max-height: 90vh; overflow-y: auto; border-radius: 20px; padding: 28px; position: relative; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4); animation: modalPop 0.35s ease both; }
     .modal-box.wide { max-width: 760px; }
-
-    .modal-close {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      font-size: 1.1rem;
-      cursor: pointer;
-      color: var(--text-muted);
-      transition: transform 0.2s, background 0.2s;
-    }
+    .modal-close { position: absolute; top: 18px; right: 18px; background: var(--bg-alt); border: 1px solid var(--border); width: 36px; height: 36px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; color: var(--text-muted); transition: transform 0.2s; }
     .modal-close:hover { transform: rotate(90deg); color: var(--text-main); }
-
     .tabs { display: flex; gap: 8px; margin-bottom: 20px; background: var(--bg-alt); padding: 5px; border-radius: 12px; }
-    .tab-btn {
-      flex: 1;
-      padding: 10px;
-      border: none;
-      background: transparent;
-      border-radius: 9px;
-      font-weight: 600;
-      cursor: pointer;
-      color: var(--text-muted);
-      transition: all 0.2s;
-    }
+    .tab-btn { flex: 1; padding: 10px; border: none; background: transparent; border-radius: 9px; font-weight: 600; cursor: pointer; color: var(--text-muted); }
     .tab-btn.active { background: var(--bg-card); color: var(--primary); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
-
     .form-group { margin-bottom: 14px; }
     .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 5px; }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%;
-      padding: 11px 14px;
-      border: 1px solid var(--border);
-      background: var(--input-bg);
-      color: var(--text-main);
-      border-radius: 10px;
-      font-size: 0.95rem;
-      font-family: inherit;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
-    }
-
-    .price-notice-box {
-      background: rgba(37, 99, 235, 0.1);
-      border: 1px solid rgba(37, 99, 235, 0.3);
-      color: var(--primary);
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 11px 14px; border: 1px solid var(--border); background: var(--input-bg); color: var(--text-main); border-radius: 10px; font-size: 0.95rem; font-family: inherit; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18); }
+    .price-notice-box { background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(37, 99, 235, 0.3); color: var(--primary); padding: 10px 14px; border-radius: 10px; font-size: 0.9rem; font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
     .status-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-top: 14px; }
-    .master-reply-box {
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.4);
-      color: var(--accent);
-      padding: 12px 14px;
-      border-radius: 10px;
-      margin-top: 10px;
-      font-weight: 600;
-    }
-
+    .master-reply-box { background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.4); color: var(--accent); padding: 12px 14px; border-radius: 10px; margin-top: 10px; font-weight: 600; }
     .order-item { border: 1px solid var(--border); border-radius: 14px; padding: 18px; margin-bottom: 16px; background: var(--bg-alt); }
     .order-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
     .city-tag { background: rgba(37, 99, 235, 0.15); color: var(--primary); padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; }
-    .type-tag-complaint { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
-    .type-tag-question { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
-    .type-tag-review { background: rgba(16, 185, 129, 0.15); color: #10b981; }
-
     .reply-controls { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
-    .reply-controls input {
-      flex: 1;
-      min-width: 200px;
-      padding: 9px 12px;
-      border: 1px solid var(--border);
-      background: var(--input-bg);
-      color: var(--text-main);
-      border-radius: 8px;
-    }
-
+    .reply-controls input { flex: 1; min-width: 200px; padding: 9px 12px; border: 1px solid var(--border); background: var(--input-bg); color: var(--text-main); border-radius: 8px; }
     .toast-container { position: fixed; bottom: 20px; right: 20px; z-index: 2000; display: flex; flex-direction: column; gap: 10px; max-width: 350px; }
-    .toast-banner {
-      background: #0f172a;
-      color: #ffffff;
-      border-left: 5px solid var(--primary);
-      padding: 14px 18px;
-      border-radius: 12px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
-      cursor: pointer;
-      animation: toastSlideIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
-    }
+    .toast-banner { background: #0f172a; color: #ffffff; border-left: 5px solid var(--primary); padding: 14px 18px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35); cursor: pointer; animation: toastSlideIn 0.4s ease both; }
     .toast-banner strong { display: block; font-size: 0.95rem; margin-bottom: 3px; color: #93c5fd; }
     .toast-banner span { font-size: 0.85rem; color: #e2e8f0; }
-
-    @media (max-width: 880px) {
-      .hero-grid, .advantages-layout, .geo-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 1.95rem; }
-      .nav-links { display: none; }
-    }
+    @media (max-width: 880px) { .hero-grid, .advantages-layout, .geo-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 1.95rem; } .nav-links { display: none; } }
   </style>
 </head>
 <body>
@@ -931,16 +526,8 @@
   <script src="https://gstatic.com"></script>
   <script>
     const MASTERS = {
-      "saransk": {
-        password: "123",
-        name: "Мастер — Саранск на дому (+7 951 053-66-08)",
-        defaultCity: "Саранск"
-      },
-      "aturyevo": {
-        password: "123",
-        name: "Мастер — Атюрьево (+7 952 078-54-82)",
-        defaultCity: "Атюрьево"
-      }
+      "saransk": { password: "123", name: "Мастер — Саранск на дому (+7 951 053-66-08)", defaultCity: "Саранск" },
+      "aturyevo": { password: "123", name: "Мастер — Атюрьево (+7 952 078-54-82)", defaultCity: "Атюрьево" }
     };
 
     const DB_FULL_URL = ["https://", "remont-7991d-default-rtdb", "://"].join("");
@@ -953,46 +540,29 @@
         db = firebase.database();
         isFirebaseReady = true;
       }
-    } catch (e) {
-      console.error("Ошибка Firebase:", e);
-    }
+    } catch (e) {}
 
-    function getLocalData(key) {
-      try { return JSON.parse(localStorage.getItem(key) || "{}"); } catch (e) { return {}; }
-    }
-    function setLocalData(key, val) {
-      try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {}
-    }
+    function getLocalData(k) { try { return JSON.parse(localStorage.getItem(k) || "{}"); } catch (e) { return {}; } }
+    function setLocalData(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
 
     const themeToggleBtn = document.getElementById("themeToggle");
-    function applyTheme(theme) {
-      if (theme === "dark") {
-        document.documentElement.setAttribute("data-theme", "dark");
-        themeToggleBtn.textContent = "☀️";
-      } else {
-        document.documentElement.removeAttribute("data-theme");
-        themeToggleBtn.textContent = "🌙";
-      }
-      localStorage.setItem("site_theme", theme);
+    function applyTheme(t) {
+      if (t === "dark") { document.documentElement.setAttribute("data-theme", "dark"); themeToggleBtn.textContent = "☀️"; }
+      else { document.documentElement.removeAttribute("data-theme"); themeToggleBtn.textContent = "🌙"; }
+      localStorage.setItem("site_theme", t);
     }
     applyTheme(localStorage.getItem("site_theme") || "light");
-
     themeToggleBtn.addEventListener("click", function() {
-      const current = document.documentElement.getAttribute("data-theme");
-      applyTheme(current === "dark" ? "light" : "dark");
+      applyTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark");
     });
 
-    const revealObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
-      });
+    const revObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(en) { if (en.isIntersecting) en.target.classList.add("visible"); });
     }, { threshold: 0.1 });
-    document.querySelectorAll(".reveal").forEach(function(el) { revealObserver.observe(el); });
+    document.querySelectorAll(".reveal").forEach(function(el) { revObs.observe(el); });
 
     function requestNotifyPermission() {
-      if ("Notification" in window && Notification.permission === "default") {
-        Notification.requestPermission();
-      }
+      if ("Notification" in window && Notification.permission === "default") Notification.requestPermission();
     }
 
     function playBeep() {
@@ -1000,355 +570,237 @@
         const ctx = new (window.AudioContext || window.webkitAudioContext)();
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
-        osc.type = "sine";
         osc.frequency.setValueAtTime(880, ctx.currentTime);
         gain.gain.setValueAtTime(0.12, ctx.currentTime);
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.start();
-        osc.stop(ctx.currentTime + 0.18);
+        osc.connect(gain); gain.connect(ctx.destination);
+        osc.start(); osc.stop(ctx.currentTime + 0.18);
       } catch (e) {}
     }
 
-    function triggerNotification(title, body, onClickCallback) {
+    function triggerNotification(title, body, cb) {
       playBeep();
-      const container = document.getElementById("toastContainer");
-      const toast = document.createElement("div");
-      toast.className = "toast-banner";
-      toast.innerHTML = "<strong>" + title + "</strong><span>" + body + "</span>";
-      toast.onclick = function() {
-        if (onClickCallback) onClickCallback();
-        toast.remove();
-      };
-      container.appendChild(toast);
-      setTimeout(function() { if (toast.parentNode) toast.remove(); }, 8000);
-
+      const box = document.getElementById("toastContainer");
+      const el = document.createElement("div");
+      el.className = "toast-banner";
+      el.innerHTML = "<strong>" + title + "</strong><span>" + body + "</span>";
+      el.onclick = function() { if (cb) cb(); el.remove(); };
+      box.appendChild(el);
+      setTimeout(function() { if (el.parentNode) el.remove(); }, 8000);
       if ("Notification" in window && Notification.permission === "granted") {
-        const sysNotif = new Notification(title, { body: body });
-        sysNotif.onclick = function() {
-          window.focus();
-          if (onClickCallback) onClickCallback();
-        };
+        const n = new Notification(title, { body: body });
+        n.onclick = function() { window.focus(); if (cb) cb(); };
       }
     }
-    const savedClientCode = localStorage.getItem("last_order_code");
-    if (savedClientCode) watchClientOrderReply(savedClientCode);
+
+    function openClientModal(tab, city) {
+      requestNotifyPermission();
+      document.getElementById("clientModal").classList.add("active");
+      if (city) document.getElementById("cCity").value = city;
+      switchClientTab(tab || "new");
+    }
+
+    function openFeedbackModal(tab, type) {
+      document.getElementById("feedbackModal").classList.add("active");
+      if (type) { document.getElementById("fbType").value = type; toggleRatingField(); }
+      switchFeedbackTab(tab || "new");
+    }
+
+    function openMasterModal() {
+      requestNotifyPermission();
+      document.getElementById("masterModal").classList.add("active");
+      const s = sessionStorage.getItem("loggedMaster");
+      if (s && MASTERS[s]) showMasterDashboard(s);
+    }
+
+    function closeModals() {
+      document.querySelectorAll(".modal-overlay").forEach(function(m) { m.classList.remove("active"); });
+    }
+
+    document.querySelectorAll(".modal-overlay").forEach(function(ov) {
+      ov.addEventListener("click", function(e) { if (e.target === ov) closeModals(); });
+    });
+    function switchClientTab(tab) {
+      const isNew = tab === "new";
+      document.getElementById("clientNewTab").style.display = isNew ? "block" : "none";
+      document.getElementById("clientCheckTab").style.display = isNew ? "none" : "block";
+      document.getElementById("tabNewBtn").classList.toggle("active", isNew);
+      document.getElementById("tabCheckBtn").classList.toggle("active", !isNew);
+      if (!isNew) {
+        const c = localStorage.getItem("last_order_code");
+        if (c) { document.getElementById("searchOrderCode").value = c; checkOrderStatus(); }
+      }
+    }
+
+    document.getElementById("clientOrderForm").addEventListener("submit", function(e) {
+      e.preventDefault(); requestNotifyPermission();
+      const form = this, code = String(Math.floor(1000 + Math.random() * 9000));
+      const data = {
+        code: code, name: document.getElementById("cName").value.trim(),
+        city: document.getElementById("cCity").value, phone: document.getElementById("cPhone").value.trim(),
+        problem: document.getElementById("cProblem").value.trim(), reply: "",
+        createdAt: new Date().toLocaleString("ru-RU", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })
+      };
+      localStorage.setItem("last_order_code", code); localStorage.setItem("last_known_reply_" + code, "");
+      const done = function() { form.reset(); switchClientTab("check"); watchClientOrderReply(code); };
+      if (isFirebaseReady && db) db.ref("orders/" + code).set(data).then(done).catch(done);
+      else { const all = getLocalData("remkomp_orders"); all[code] = data; setLocalData("remkomp_orders", all); done(); }
+    });
+
+    function checkOrderStatus() {
+      const code = document.getElementById("searchOrderCode").value.trim();
+      const box = document.getElementById("clientOrderResult");
+      if (!code) return;
+      const draw = function(o) {
+        if (!o) { box.innerHTML = '<div class="status-card" style="color:#ef4444;">Заявка <b>#' + code + '</b> не найдена.</div>'; return; }
+        const r = o.reply ? '💬 <b>Ответ мастера:</b> ' + o.reply : '⏳ Заявка принята! <b>Цена будет указана в ответе на заявку</b>.';
+        box.innerHTML = '<div class="status-card"><strong>Заявка #' + o.code + ' (' + o.city + ')</strong> — ' + o.createdAt + '<p><b>Имя:</b> ' + o.name + ' | <b>Тел:</b> ' + o.phone + '</p><p><b>Проблема:</b> ' + o.problem + '</p><div class="master-reply-box">' + r + '</div></div>';
+      };
+      if (isFirebaseReady && db) db.ref("orders/" + code).on("value", function(s) { draw(s.val()); });
+      else draw(getLocalData("remkomp_orders")[code]);
+    }
+
+    function watchClientOrderReply(code) {
+      if (!isFirebaseReady || !db || !code) return;
+      db.ref("orders/" + code).on("value", function(s) {
+        const o = s.val(); if (!o) return;
+        const prev = localStorage.getItem("last_known_reply_" + code) || "";
+        if (o.reply && o.reply !== prev) {
+          localStorage.setItem("last_known_reply_" + code, o.reply);
+          triggerNotification("Пришел ответ на вашу заявку! Подробнее на сайте...", "Заявка #" + code + ": " + o.reply, function() { openClientModal("check"); });
+        }
+      });
+    }
+    if (localStorage.getItem("last_order_code")) watchClientOrderReply(localStorage.getItem("last_order_code"));
 
     const DEFAULT_REVIEWS = [
-      { name: "Александр", city: "Саранск", rating: 5, text: "Привёз ноутбук мастеру на дом в Саранске, почистил от пыли и заменил термопасту. Температуры упали, работает тихо!", reply: "Спасибо за обращение! Рад был помочь." },
-      { name: "Елена", city: "Атюрьево", rating: 5, text: "Очень удобно, что в Атюрьево мастер сам приезжает на дом. Быстро переустановил Windows и настроил Wi-Fi, все фотографии сохранил.", reply: "" },
-      { name: "Дмитрий", city: "Саранск", rating: 5, text: "Оставил заявку на сайте, через 10 минут пришел ответ с точной ценой. Отвёз системник в Саранске, поставили SSD — теперь летает!", reply: "" },
-      { name: "Сергей", city: "Атюрьево", rating: 5, text: "Мастер приехал по Атюрьево, отремонтировал разъём питания на ноутбуке, цена адекватная и без лишних накруток. Рекомендую!", reply: "" }
+      { name: "Александр", city: "Саранск", rating: 5, text: "Привёз ноутбук мастеру на дом в Саранске, почистил от пыли и заменил термопасту. Работает тихо!", reply: "Спасибо за обращение!" },
+      { name: "Елена", city: "Атюрьево", rating: 5, text: "Очень удобно, что в Атюрьево мастер сам приезжает на дом. Быстро переустановил Windows и настроил Wi-Fi.", reply: "" },
+      { name: "Дмитрий", city: "Саранск", rating: 5, text: "Оставил заявку на сайте, через 10 минут пришел ответ с точной ценой. Отвёз системник в Саранске, поставили SSD!", reply: "" },
+      { name: "Сергей", city: "Атюрьево", rating: 5, text: "Мастер приехал по Атюрьево, отремонтировал разъём питания на ноутбуке, цена адекватная. Рекомендую!", reply: "" }
     ];
 
-    function renderMarqueeReviews(firebaseReviewsList) {
-      firebaseReviewsList = firebaseReviewsList || [];
+    function renderMarqueeReviews(list) {
       const track = document.getElementById("reviewsMarqueeTrack");
-      const combined = DEFAULT_REVIEWS.concat(firebaseReviewsList);
-      const loopItems = combined.concat(combined);
-
-      track.innerHTML = loopItems.map(function(rev) {
+      const all = DEFAULT_REVIEWS.concat(list || []);
+      track.innerHTML = all.concat(all).map(function(rev) {
         const r = Number(rev.rating) || 5;
-        const stars = "★".repeat(r) + "☆".repeat(5 - r);
-        const replyBlock = rev.reply ? '<div class="review-master-reply"><b>Ответ мастера:</b> ' + rev.reply + '</div>' : '';
-        return (
-          '<div class="review-card">' +
-            '<div class="review-top">' +
-              '<span class="review-author">' + rev.name + '</span>' +
-              '<span class="review-city">' + rev.city + '</span>' +
-            '</div>' +
-            '<div class="review-stars">' + stars + '</div>' +
-            '<p class="review-text">' + rev.text + '</p>' +
-            replyBlock +
-          '</div>'
-        );
+        return '<div class="review-card"><div class="review-top"><span class="review-author">' + rev.name + '</span><span class="review-city">' + rev.city + '</span></div><div class="review-stars">' + "★".repeat(r) + "☆".repeat(5 - r) + '</div><p class="review-text">' + rev.text + '</p>' + (rev.reply ? '<div class="review-master-reply"><b>Ответ мастера:</b> ' + rev.reply + '</div>' : '') + '</div>';
       }).join("");
     }
     renderMarqueeReviews([]);
-    function switchFeedbackTab(tab) {
-      const isNew = tab === "new";
-      document.getElementById("feedbackNewTab").style.display = isNew ? "block" : "none";
-      document.getElementById("feedbackListTab").style.display = isNew ? "none" : "block";
-      document.getElementById("fbTabNewBtn").classList.toggle("active", isNew);
-      document.getElementById("fbTabListBtn").classList.toggle("active", !isNew);
-    }
 
-    function toggleRatingField() {
-      const type = document.getElementById("fbType").value;
-      document.getElementById("ratingGroup").style.display = type === "Отзыв" ? "block" : "none";
+    function switchFeedbackTab(t) {
+      const isN = t === "new";
+      document.getElementById("feedbackNewTab").style.display = isN ? "block" : "none";
+      document.getElementById("feedbackListTab").style.display = isN ? "none" : "block";
+      document.getElementById("fbTabNewBtn").classList.toggle("active", isN);
+      document.getElementById("fbTabListBtn").classList.toggle("active", !isN);
     }
+    function toggleRatingField() {
+      document.getElementById("ratingGroup").style.display = document.getElementById("fbType").value === "Отзыв" ? "block" : "none";
+    }
+    let cachedFeedback = {}, cachedOrders = {}, knownOrderKeys = null;
 
     document.getElementById("feedbackForm").addEventListener("submit", function(e) {
       e.preventDefault();
-      const form = this;
-      const id = "fb_" + Date.now();
-      const fbData = {
-        id: id,
-        type: document.getElementById("fbType").value,
-        name: document.getElementById("fbName").value.trim(),
-        city: document.getElementById("fbCity").value,
-        rating: document.getElementById("fbRating").value,
-        text: document.getElementById("fbText").value.trim(),
-        reply: "",
-        createdAt: new Date().toLocaleString("ru-RU", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })
-      };
-
-      if (isFirebaseReady && db) {
-        db.ref("feedback/" + id).set(fbData).then(function() {
-          form.reset();
-          toggleRatingField();
-          switchFeedbackTab("list");
-        });
-      } else {
-        const all = getLocalData("remkomp_feedback");
-        all[id] = fbData;
-        setLocalData("remkomp_feedback", all);
-        form.reset();
-        toggleRatingField();
-        loadFeedbackData();
-        switchFeedbackTab("list");
-      }
+      const form = this, id = "fb_" + Date.now();
+      const data = { id: id, type: document.getElementById("fbType").value, name: document.getElementById("fbName").value.trim(), city: document.getElementById("fbCity").value, rating: document.getElementById("fbRating").value, text: document.getElementById("fbText").value.trim(), reply: "", createdAt: new Date().toLocaleString("ru-RU", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }) };
+      const done = function() { form.reset(); toggleRatingField(); switchFeedbackTab("list"); };
+      if (isFirebaseReady && db) db.ref("feedback/" + id).set(data).then(done);
+      else { const all = getLocalData("remkomp_feedback"); all[id] = data; setLocalData("remkomp_feedback", all); loadFeedbackData(); done(); }
     });
-
-    let cachedFeedback = {};
 
     function loadFeedbackData() {
-      function updateViews(dataObj) {
-        cachedFeedback = dataObj || {};
+      const upd = function(obj) {
+        cachedFeedback = obj || {};
         const arr = Object.values(cachedFeedback).reverse();
-
-        const onlyReviews = arr.filter(function(item) { return item.type === "Отзыв"; });
-        renderMarqueeReviews(onlyReviews);
-
-        const listEl = document.getElementById("publicFeedbackList");
-        if (arr.length === 0) {
-          listEl.innerHTML = '<p style="color:var(--text-muted);">Пока нет опубликованных обращений.</p>';
-        } else {
-          listEl.innerHTML = arr.map(function(item) {
-            const replyBlock = item.reply ? '<div class="master-reply-box">💬 <b>Ответ мастера:</b> ' + item.reply + '</div>' : '';
-            return (
-              '<div class="status-card">' +
-                '<div style="display:flex; justify-content:space-between; margin-bottom:6px;">' +
-                  '<strong>[' + item.type + '] ' + item.name + ' (' + item.city + ')</strong>' +
-                  '<span style="font-size:0.82rem; color:var(--text-muted);">' + item.createdAt + '</span>' +
-                '</div>' +
-                '<p style="font-size:0.92rem;">' + item.text + '</p>' +
-                replyBlock +
-              '</div>'
-            );
-          }).join("");
-        }
-
+        renderMarqueeReviews(arr.filter(function(i) { return i.type === "Отзыв"; }));
+        document.getElementById("publicFeedbackList").innerHTML = arr.length ? arr.map(function(i) {
+          return '<div class="status-card"><strong>[' + i.type + '] ' + i.name + ' (' + i.city + ')</strong> — ' + i.createdAt + '<p>' + i.text + '</p>' + (i.reply ? '<div class="master-reply-box">💬 ' + i.reply + '</div>' : '') + '</div>';
+        }).join("") : '<p style="color:var(--text-muted);">Пока нет обращений.</p>';
         if (sessionStorage.getItem("loggedMaster")) renderMasterData();
-      }
-
-      if (isFirebaseReady && db) {
-        db.ref("feedback").on("value", function(snap) { updateViews(snap.val()); });
-      } else {
-        updateViews(getLocalData("remkomp_feedback"));
-      }
+      };
+      if (isFirebaseReady && db) db.ref("feedback").on("value", function(s) { upd(s.val()); });
+      else upd(getLocalData("remkomp_feedback"));
     }
     loadFeedbackData();
-    let cachedOrders = {};
-    let knownOrderKeys = null;
 
     document.getElementById("masterLoginForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      requestNotifyPermission();
-      const login = document.getElementById("mLogin").value.trim().toLowerCase();
-      const pass = document.getElementById("mPass").value.trim();
-      const errBox = document.getElementById("loginError");
-
-      if (MASTERS[login] && MASTERS[login].password === pass) {
-        errBox.style.display = "none";
-        sessionStorage.setItem("loggedMaster", login);
-        showMasterDashboard(login);
-      } else {
-        errBox.style.display = "block";
-      }
+      e.preventDefault(); requestNotifyPermission();
+      const l = document.getElementById("mLogin").value.trim().toLowerCase(), p = document.getElementById("mPass").value.trim();
+      if (MASTERS[l] && MASTERS[l].password === p) {
+        document.getElementById("loginError").style.display = "none";
+        sessionStorage.setItem("loggedMaster", l); showMasterDashboard(l);
+      } else document.getElementById("loginError").style.display = "block";
     });
 
-    function showMasterDashboard(login) {
-      const info = MASTERS[login];
+    function showMasterDashboard(l) {
       document.getElementById("masterLoginView").style.display = "none";
       document.getElementById("masterDashboardView").style.display = "block";
-      document.getElementById("masterWelcome").textContent = info.name;
-      document.getElementById("masterFilter").value = info.defaultCity;
-
+      document.getElementById("masterWelcome").textContent = MASTERS[l].name;
+      document.getElementById("masterFilter").value = MASTERS[l].defaultCity;
       if (isFirebaseReady && db) {
-        db.ref("orders").on("value", function(snap) {
-          const data = snap.val() || {};
-          const keys = Object.keys(data);
-
-          if (knownOrderKeys !== null) {
-            keys.forEach(function(k) {
-              if (knownOrderKeys.indexOf(k) === -1) {
-                const newOrder = data[k];
-                const filter = document.getElementById("masterFilter").value;
-                if (filter === "ALL" || newOrder.city === filter) {
-                  triggerNotification(
-                    "Пришла заявка на ремонт компьютера! Подробнее на сайте...",
-                    newOrder.city + ": " + newOrder.name + " — " + newOrder.problem,
-                    function() { openMasterModal(); switchMasterTab("orders"); }
-                  );
-                }
-              }
-            });
-          }
-          knownOrderKeys = keys;
-          cachedOrders = data;
-          renderMasterData();
+        db.ref("orders").on("value", function(s) {
+          const d = s.val() || {}, ks = Object.keys(d);
+          if (knownOrderKeys !== null) ks.forEach(function(k) {
+            if (knownOrderKeys.indexOf(k) === -1) {
+              const no = d[k], flt = document.getElementById("masterFilter").value;
+              if (flt === "ALL" || no.city === flt) triggerNotification("Пришла заявка на ремонт компьютера! Подробнее на сайте...", no.city + ": " + no.name + " — " + no.problem, function() { openMasterModal(); switchMasterTab("orders"); });
+            }
+          });
+          knownOrderKeys = ks; cachedOrders = d; renderMasterData();
         });
-      } else {
-        cachedOrders = getLocalData("remkomp_orders");
-        renderMasterData();
-      }
+      } else { cachedOrders = getLocalData("remkomp_orders"); renderMasterData(); }
     }
 
     function logoutMaster() {
       sessionStorage.removeItem("loggedMaster");
       document.getElementById("masterDashboardView").style.display = "none";
       document.getElementById("masterLoginView").style.display = "block";
-      document.getElementById("mPass").value = "";
     }
 
-    function switchMasterTab(tab) {
-      const isOrders = tab === "orders";
-      document.getElementById("masterOrdersSection").style.display = isOrders ? "block" : "none";
-      document.getElementById("masterFeedbackSection").style.display = isOrders ? "none" : "block";
-      document.getElementById("mTabOrdersBtn").classList.toggle("active", isOrders);
-      document.getElementById("mTabFbBtn").classList.toggle("active", !isOrders);
+    function switchMasterTab(t) {
+      const isO = t === "orders";
+      document.getElementById("masterOrdersSection").style.display = isO ? "block" : "none";
+      document.getElementById("masterFeedbackSection").style.display = isO ? "none" : "block";
+      document.getElementById("mTabOrdersBtn").classList.toggle("active", isO);
+      document.getElementById("mTabFbBtn").classList.toggle("active", !isO);
     }
+
     function renderMasterData() {
-      const filter = document.getElementById("masterFilter").value;
+      const flt = document.getElementById("masterFilter").value;
+      const oKeys = Object.keys(cachedOrders).reverse().filter(function(k) { return flt === "ALL" || cachedOrders[k].city === flt; });
+      document.getElementById("masterOrdersList").innerHTML = oKeys.length ? oKeys.map(function(c) {
+        const i = cachedOrders[c], val = (i.reply || "").replace(/"/g, "&quot;");
+        return '<div class="order-item"><div class="order-header"><div><span class="city-tag">' + i.city + '</span> <strong>#' + i.code + ' — ' + i.name + '</strong></div><span>' + i.createdAt + '</span></div><p>📞 <a href="tel:' + i.phone + '">' + i.phone + '</a></p><p><b>Проблема:</b> ' + i.problem + '</p>' + (i.reply ? '<div class="master-reply-box">Ваш ответ: ' + i.reply + '</div>' : '') + '<div class="reply-controls"><input type="text" id="replyInput_' + c + '" placeholder="Ответ и цена..." value="' + val + '" /><button class="btn" onclick="sendMasterReply(\'' + c + '\')">Отправить</button><button class="btn" style="background:#64748b;" onclick="deleteOrder(\'' + c + '\')">🗑</button></div></div>';
+      }).join("") : '<p style="text-align:center;padding:20px;">Заявок пока нет.</p>';
 
-      const ordersEl = document.getElementById("masterOrdersList");
-      const orderKeys = Object.keys(cachedOrders).reverse().filter(function(k) {
-        return filter === "ALL" || cachedOrders[k].city === filter;
-      });
-
-      if (orderKeys.length === 0) {
-        ordersEl.innerHTML = '<p style="color:var(--text-muted); text-align:center; padding:20px;">Заявок для выбранного района пока нет.</p>';
-      } else {
-        ordersEl.innerHTML = orderKeys.map(function(code) {
-          const item = cachedOrders[code];
-          const replyBlock = item.reply ? '<div class="master-reply-box" style="margin-bottom:10px;">Ваш ответ: ' + item.reply + '</div>' : '';
-          const safeReplyVal = (item.reply || "").replace(/"/g, "&quot;");
-          return (
-            '<div class="order-item">' +
-              '<div class="order-header">' +
-                '<div>' +
-                  '<span class="city-tag">' + item.city + '</span>' +
-                  '<strong style="margin-left:8px;">#' + item.code + ' — ' + item.name + '</strong>' +
-                '</div>' +
-                '<span style="font-size:0.84rem; color:var(--text-muted);">' + item.createdAt + '</span>' +
-              '</div>' +
-              '<p style="margin-bottom:6px;">📞 <a href="tel:' + item.phone + '" style="color:var(--primary); font-weight:700; text-decoration:none;">' + item.phone + '</a></p>' +
-              '<p style="font-size:0.94rem; margin-bottom:10px;"><b>Проблема:</b> ' + item.problem + '</p>' +
-              replyBlock +
-              '<div class="reply-controls">' +
-                '<input type="text" id="replyInput_' + code + '" placeholder="Напишите ответ и цену ремонта..." value="' + safeReplyVal + '" />' +
-                '<button class="btn" style="padding:9px 14px;" onclick="sendMasterReply(\'' + code + '\')">Отправить</button>' +
-                '<button class="btn" style="background:#64748b; padding:9px 12px;" onclick="deleteOrder(\'' + code + '\')" title="Удалить">🗑</button>' +
-              '</div>' +
-            '</div>'
-          );
-        }).join("");
-      }
-
-      const fbEl = document.getElementById("masterFeedbackList");
-      const fbKeys = Object.keys(cachedFeedback).reverse().filter(function(k) {
-        return filter === "ALL" || cachedFeedback[k].city === filter;
-      });
-
-      if (fbKeys.length === 0) {
-        fbEl.innerHTML = '<p style="color:var(--text-muted); text-align:center; padding:20px;">Отзывов, вопросов и жалоб пока нет.</p>';
-      } else {
-        fbEl.innerHTML = fbKeys.map(function(id) {
-          const item = cachedFeedback[id];
-          let tagClass = "type-tag-review";
-          if (item.type === "Жалоба") tagClass = "type-tag-complaint";
-          if (item.type === "Вопрос") tagClass = "type-tag-question";
-          const replyBlock = item.reply ? '<div class="master-reply-box" style="margin-bottom:10px;">Ваш ответ: ' + item.reply + '</div>' : '';
-          const safeReplyVal = (item.reply || "").replace(/"/g, "&quot;");
-
-          return (
-            '<div class="order-item">' +
-              '<div class="order-header">' +
-                '<div>' +
-                  '<span class="city-tag ' + tagClass + '">' + item.type + '</span> ' +
-                  '<span class="city-tag">' + item.city + '</span>' +
-                  '<strong style="margin-left:8px;">' + item.name + '</strong>' +
-                '</div>' +
-                '<span style="font-size:0.84rem; color:var(--text-muted);">' + item.createdAt + '</span>' +
-              '</div>' +
-              '<p style="font-size:0.94rem; margin-bottom:10px;">' + item.text + '</p>' +
-              replyBlock +
-              '<div class="reply-controls">' +
-                '<input type="text" id="fbReplyInput_' + id + '" placeholder="Напишите ответ..." value="' + safeReplyVal + '" />' +
-                '<button class="btn" style="padding:9px 14px;" onclick="sendFeedbackReply(\'' + id + '\')">Ответить</button>' +
-                '<button class="btn" style="background:#64748b; padding:9px 12px;" onclick="deleteFeedback(\'' + id + '\')" title="Удалить">🗑</button>' +
-              '</div>' +
-            '</div>'
-          );
-        }).join("");
-      }
+      const fKeys = Object.keys(cachedFeedback).reverse().filter(function(k) { return flt === "ALL" || cachedFeedback[k].city === flt; });
+      document.getElementById("masterFeedbackList").innerHTML = fKeys.length ? fKeys.map(function(id) {
+        const i = cachedFeedback[id], val = (i.reply || "").replace(/"/g, "&quot;");
+        return '<div class="order-item"><div class="order-header"><div><span class="city-tag">' + i.type + '</span> <span class="city-tag">' + i.city + '</span> <strong>' + i.name + '</strong></div><span>' + i.createdAt + '</span></div><p>' + i.text + '</p>' + (i.reply ? '<div class="master-reply-box">Ваш ответ: ' + i.reply + '</div>' : '') + '<div class="reply-controls"><input type="text" id="fbReplyInput_' + id + '" placeholder="Ваш ответ..." value="' + val + '" /><button class="btn" onclick="sendFeedbackReply(\'' + id + '\')">Ответить</button><button class="btn" style="background:#64748b;" onclick="deleteFeedback(\'' + id + '\')">🗑</button></div></div>';
+      }).join("") : '<p style="text-align:center;padding:20px;">Обращений пока нет.</p>';
     }
 
-    function sendMasterReply(code) {
-      const text = document.getElementById("replyInput_" + code).value.trim();
-      if (!text) return;
-      if (isFirebaseReady && db) {
-        db.ref("orders/" + code + "/reply").set(text);
-      } else {
-        const all = getLocalData("remkomp_orders");
-        if (all[code]) {
-          all[code].reply = text;
-          setLocalData("remkomp_orders", all);
-          cachedOrders = all;
-          renderMasterData();
-        }
-      }
+    function sendMasterReply(c) {
+      const t = document.getElementById("replyInput_" + c).value.trim(); if (!t) return;
+      if (isFirebaseReady && db) db.ref("orders/" + c + "/reply").set(t);
+      else { const a = getLocalData("remkomp_orders"); if (a[c]) { a[c].reply = t; setLocalData("remkomp_orders", a); cachedOrders = a; renderMasterData(); } }
     }
-
-    function deleteOrder(code) {
-      if (!confirm("Удалить заявку #" + code + "?")) return;
-      if (isFirebaseReady && db) {
-        db.ref("orders/" + code).remove();
-      } else {
-        const all = getLocalData("remkomp_orders");
-        delete all[code];
-        setLocalData("remkomp_orders", all);
-        cachedOrders = all;
-        renderMasterData();
-      }
+    function deleteOrder(c) {
+      if (!confirm("Удалить заявку #" + c + "?")) return;
+      if (isFirebaseReady && db) db.ref("orders/" + c).remove();
+      else { const a = getLocalData("remkomp_orders"); delete a[c]; setLocalData("remkomp_orders", a); cachedOrders = a; renderMasterData(); }
     }
-
     function sendFeedbackReply(id) {
-      const text = document.getElementById("fbReplyInput_" + id).value.trim();
-      if (!text) return;
-      if (isFirebaseReady && db) {
-        db.ref("feedback/" + id + "/reply").set(text);
-      } else {
-        const all = getLocalData("remkomp_feedback");
-        if (all[id]) {
-          all[id].reply = text;
-          setLocalData("remkomp_feedback", all);
-          loadFeedbackData();
-        }
-      }
+      const t = document.getElementById("fbReplyInput_" + id).value.trim(); if (!t) return;
+      if (isFirebaseReady && db) db.ref("feedback/" + id + "/reply").set(t);
+      else { const a = getLocalData("remkomp_feedback"); if (a[id]) { a[id].reply = t; setLocalData("remkomp_feedback", a); loadFeedbackData(); } }
     }
-
     function deleteFeedback(id) {
-      if (!confirm("Удалить это обращение?")) return;
-      if (isFirebaseReady && db) {
-        db.ref("feedback/" + id).remove();
-      } else {
-        const all = getLocalData("remkomp_feedback");
-        delete all[id];
-        setLocalData("remkomp_feedback", all);
-        loadFeedbackData();
-      }
+      if (!confirm("Удалить обращение?")) return;
+      if (isFirebaseReady && db) db.ref("feedback/" + id).remove();
+      else { const a = getLocalData("remkomp_feedback"); delete a[id]; setLocalData("remkomp_feedback", a); loadFeedbackData(); }
     }
   </script>
 </body>
